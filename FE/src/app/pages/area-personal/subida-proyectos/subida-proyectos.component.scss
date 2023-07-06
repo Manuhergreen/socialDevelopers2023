@@ -1,0 +1,10 @@
+.projectContainer {
+   display: flex;
+   flex-direction: row;
+
+   .projectDiv {
+     width: 60%;
+     gap: 10px;
+     border: solid 1px black;
+   }
+}

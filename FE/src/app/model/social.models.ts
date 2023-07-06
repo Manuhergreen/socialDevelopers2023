@@ -11,8 +11,8 @@ export interface userI{
 export interface userProfileI{
     id: string;
     image_profile: string;
-    nombre: string;
-    apellidos: string;
+    name: string;
+    lastname: string;
     email: string;
     description: string;
     enlace_git: string;

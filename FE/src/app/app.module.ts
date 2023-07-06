@@ -9,7 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/registro/registro.component';
 import { AreaPersonalComponent } from './pages/area-personal/area-personal.component';
-
+import { PerfilUsuarioComponent} from './pages/area-personal/perfil-usuario/perfil-usuario.component';
 import { SubidaProyectosComponent } from './pages/area-personal/subida-proyectos/subida-proyectos.component';
 import { ListadoProyectosComponent } from './pages/listado-proyectos/listado-proyectos.component';
 import { NoticiasComponent } from './pages/noticias/noticias.component';
@@ -25,6 +25,7 @@ import {HttpClientModule} from '@angular/common/http';
     LoginComponent,
     RegisterComponent,
     AreaPersonalComponent,
+    PerfilUsuarioComponent,
     SubidaProyectosComponent,
     ListadoProyectosComponent,
     NoticiasComponent

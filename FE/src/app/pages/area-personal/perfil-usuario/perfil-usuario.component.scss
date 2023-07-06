@@ -1,0 +1,10 @@
+.profileContainer {
+    display: flex;
+    flex-direction: row;
+ 
+    .profileDiv {
+      width: 60%;
+      gap: 10px;
+      border: solid 1px black;
+    }
+ }
