@@ -1,18 +1,17 @@
 export interface userI{
     id?: string;
     name: string;
-    apellidos: string;
+    lastname: string;
     email:string;
     password:string;
     role?: string;
 }
 
-
 export interface userProfileI{
     id: string;
-    image_profile: string;
     name: string;
     lastname: string;
+    image_profile: string;
     email: string;
     description: string;
     enlace_git: string;

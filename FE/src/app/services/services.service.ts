@@ -8,17 +8,14 @@ import { HttpClient } from '@angular/common/http';
 export class ServicesService {
   db_url: string= "http://localhost:3000";
 
-
-
   public userData: userI ={
     id: '',
     name: '',
-    apellidos: '',
+    lastname: '',
     email:'',
     password:'',
     role:''
   }
-
   
 
   constructor(private http:HttpClient) {}
