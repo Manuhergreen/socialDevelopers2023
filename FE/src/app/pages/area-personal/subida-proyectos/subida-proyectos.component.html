@@ -1,1 +1,47 @@
-<p>subida-proyectos works!</p>
+<div class="projectContainer">
+
+<div class="projectDiv" >
+<!-- <form action="procesar_formulario.php" method="post" enctype="multipart/form-data"> -->
+<form action="procesar_formulario.php" method="post" enctype="multipart/form-data">
+    <label for="nombre_proyecto">Nombre del Proyecto:</label>
+    <input type="text" id="nombre_proyecto" name="nombre_proyecto" required><br><br>
+
+    <label for="foto_proyecto">Foto del Proyecto:</label>
+    <input type="file" id="foto_proyecto" name="foto_proyecto" accept="image/*" required><br><br>
+
+    <label for="lenguajes_utilizados">Lenguajes Utilizados:</label><br>
+    <ul>
+      <li><input type="checkbox" name="lenguaje[]" value="html">HTML</li>
+      <li><input type="checkbox" name="lenguaje[]" value="css">CSS</li>
+      <li><input type="checkbox" name="lenguaje[]" value="react">React</li>
+      <li><input type="checkbox" name="lenguaje[]" value="angular">Angular</li>
+      <li><input type="checkbox" name="lenguaje[]" value="php">PHP</li>
+      <li><input type="checkbox" name="lenguaje[]" value="javascript">JavaScript</li>
+      <li><input type="checkbox" name="lenguaje[]" value="python">Python</li>
+      <li><input type="checkbox" name="lenguaje[]" value="java">Java</li>
+      <li><input type="checkbox" name="lenguaje[]" value="otros">Otros
+        <label for="otrosText">Otros Lenguajes:</label><br>
+        <textarea id="otrosText" name="descripcion" rows="5" cols="40" required></textarea>
+      </li>
+    </ul><br>
+
+    <label for="descripcion">Descripción del Proyecto:</label><br>
+    <textarea id="descripcion" name="descripcion" rows="5" cols="40" required></textarea><br><br>
+
+    <label for="enlace_git">Enlace a Git:</label>
+    <input type="url" id="enlace_git" name="enlace_git" required><br><br>
+
+    <label for="enlace_ver">Enlace a Ver el Proyecto:</label>
+    <input type="url" id="enlace_ver" name="enlace_ver" required><br><br>
+
+    <input type="submit" value="Enviar">
+  </form>
+</div>
+
+<div>
+<!-- Previsualizacion de los datos     -->
+        <!-- <p>Nombre del Proyecto: <span>{{nombre_proyecto.value}}</span></p> -->
+
+        <!-- <p>Foto: <img src={{foto_proyecto.value}} alt='logo'> </p> -->
+</div>
+</div>
