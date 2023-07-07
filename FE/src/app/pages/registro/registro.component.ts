@@ -20,9 +20,11 @@ export class RegisterComponent {
 
   ngOnInit(): void {
     this.registerForm = this.form.group({
+      name: ["", [Validators.required]],
+      lastname: ["", [Validators.required]],
       email: ["", [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
       password: ["", [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}')]]
-  })
+    })
   }
 
   onSubmit(){
@@ -38,9 +40,7 @@ export class RegisterComponent {
         },
         (error) => {
           this.errors = error;
-
         }
-
       )
     }
     
