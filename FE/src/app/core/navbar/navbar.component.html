@@ -21,19 +21,19 @@
                 <a class="nav-link" routerLink="/areaPersonal">Area Personal</a>
               </li>
               <li>
-                <a class="nav-link" routerLink="/register">Regístrate</a>
+                <a class="nav-link" *ngIf="!authApi.getToken()" routerLink="/register">Regístrate</a>
                
               </li>
               <li>
-                <a class="nav-link" routerLink="/login">Login</a>
+                <a class="nav-link" *ngIf="!authApi.getToken()" routerLink="/login">Login</a>
               </li>
               <li>
-                <a class="nav-link">Nombre Usuario</a>
-                <!-- <p class="Saludo" *ngIf="authApi.getToken()">Bienvenid@! {{authApi.getUsuario()}}</p> -->
+                <!-- <a class="nav-link">Nombre Usuario</a> -->
+                <p class="nav-link" *ngIf="authApi.getToken()">Bienvenid@! {{authApi.getNombre()}}</p>
               </li>
               <li>
-                <!-- <button  *ngIf="authApi.getToken()" (click)="logout()">Logout</button>                <a class="nav-link"> -->
-                <button class="button">Logout</button>
+                <button class="nav-link" *ngIf="authApi.getToken()" (click)="logout()">Logout</button>
+                <!-- <button class="button">Logout</button> -->
               </li>
             </ul>
             <ul>
