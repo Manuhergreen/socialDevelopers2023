@@ -9,6 +9,7 @@ import { userI } from 'src/app/model/social.models';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
+
 export class LoginComponent {
   loginForm!: FormGroup;
   submitted: boolean = false;
@@ -20,31 +21,30 @@ export class LoginComponent {
     this.loginForm = this.form.group({
       email: ["", [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
       password: ["", [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}')]]
-  })
+    })
   }
+
   onSubmit(){
-    console.log(this.loginForm.value);
+    // console.log('entro en la funcion');
+    // console.log(this.loginForm.value);
     this.submitted=true;
-    if(this.loginForm.valid){
-      let user: userI = this.loginForm.value;
-      this.authApi.login(user).subscribe(
 
-        (data:any)=>{
-        console.log("response ------->", data)
-        localStorage.setItem('token', data.accessToken);
-        localStorage.setItem('user',JSON.stringify(data.user))
-        this.router.navigate(['/']);
-        },
-        error => {
-          console.log(error);
-          this.errors = error;
-          
-        }
-      )
+    if (this.loginForm.valid){
+        console.log('envio el dato');
+        let user: userI = this.loginForm.value;
+        this.authApi.login(user).subscribe(
+         (data:any)=>{
+          //  console.log("response ------->", data)
+           localStorage.setItem('token', data.token);
+           localStorage.setItem('user',JSON.stringify(data.user))
+
+           this.router.navigate(['/']);
+         },
+           (error) => {
+             console.log(error);
+             this.errors = error;
+         }
+       )
     }
-    
   }
-
-
-
 }

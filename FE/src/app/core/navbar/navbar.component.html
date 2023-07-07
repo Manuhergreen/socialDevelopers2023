@@ -1,7 +1,7 @@
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <img routerLink="/"  src='../../../assets/logo.png' alt='logo'>
+          <img class="logo" routerLink="/"  src='../../../assets/Social.jpg' alt='logo'>
           <!-- <a  class="navbar-brand" href="#">Navbar</a> -->
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -14,26 +14,26 @@
               <li class="nav-item">
                 <a class="nav-link" routerLink="/projects">Listado de proyectos</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item__a">
                 <a class="nav-link" routerLink="/news">Noticias</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" routerLink="/areaPersonal">Area Personal</a>
               </li>
               <li>
-                <a class="nav-link" routerLink="/register">Regístrate</a>
+                <a class="nav-link" *ngIf="!authApi.getToken()" routerLink="/register">Regístrate</a>
                
               </li>
               <li>
-                <a class="nav-link" routerLink="/login">Login</a>
+                <a class="nav-link" *ngIf="!authApi.getToken()" routerLink="/login">Login</a>
               </li>
               <li>
-                <a class="nav-link">NombreUsuario</a>
-                <!-- <p class="Saludo" *ngIf="authApi.getToken()">Bienvenid@! {{authApi.getUsuario()}}</p> -->
+                <!-- <a class="nav-link">Nombre Usuario</a> -->
+                <p class="nav-link" *ngIf="authApi.getToken()">Bienvenid@! {{authApi.getNombre()}}</p>
               </li>
               <li>
-                <!-- <button  *ngIf="authApi.getToken()" (click)="logout()">Logout</button>                <a class="nav-link"> -->
-                <button>Logout</button>
+                <button class="nav-link" *ngIf="authApi.getToken()" (click)="logout()">Logout</button>
+                <!-- <button class="button">Logout</button> -->
               </li>
             </ul>
             <ul>
