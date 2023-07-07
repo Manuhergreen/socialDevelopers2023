@@ -1,0 +1,47 @@
+*{
+    background-color: black;
+}
+
+.nav-link{
+    color:white;
+}
+
+.nav-item__a{
+    margin-right: 600px;
+}
+
+.navbar-toggler{
+    background-color: white;
+}
+
+.button{
+    margin: 0 5px;
+    background-color:black;
+    border: 1.2px solid rgba(197, 115, 230, 0.883);
+    color: white;
+    padding: 10px;
+}
+
+.logo{
+    padding: 0 10px;
+}
+
+.logo:hover{
+        //transform: scale(1.05);
+        //overflow: hidden;
+        border: 2.2px dotted rgba(197, 115, 230, 0.883);
+}
+
+.nav-link:hover{
+        transform: scale(1.05);
+        overflow: hidden;
+        border: 2.2px solid rgba(197, 115, 230, 0.883);
+}
+
+.nav-item__a:hover{
+        transform: scale(1.05);
+        overflow: hidden;
+        border: 2.2px solid rgba(197, 115, 230, 0.883);
+}
+
+
