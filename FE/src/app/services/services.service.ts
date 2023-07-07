@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ServicesService {
-  db_url: string= "http://localhost:3000";
+  db_url: string= "http://localhost:5200/user";
 
   public userData: userI ={
     id: '',
@@ -17,12 +17,12 @@ export class ServicesService {
     role:''
   }
   
-
   constructor(private http:HttpClient) {}
 
   register(user:userI){
     return this.http.post(`${this.db_url}/register`, user)
   }
+
   login(user:userI){
     return this.http.post(`${this.db_url}/login`, user)
   }
@@ -36,5 +36,9 @@ export class ServicesService {
     return localStorage.getItem('token');
   }
 
-  
+  getNombre(){
+    let user = JSON.parse(String(localStorage.getItem('user')));
+    // console.log('nombre:', user.name);
+    return user?.name;
+  }
 }

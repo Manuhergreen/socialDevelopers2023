@@ -4,14 +4,14 @@ import { Router } from '@angular/router';
 import { userI } from 'src/app/model/social.models';
 import { ServicesService } from 'src/app/services/services.service';
 
-
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
   styleUrls: ['./registro.component.scss']
 })
+
 export class RegisterComponent {
-  
+
   registerForm!: FormGroup;
   submitted: boolean= false;
   errors: any;
@@ -28,14 +28,14 @@ export class RegisterComponent {
   }
 
   onSubmit(){
-    console.log(this.registerForm.value);
+    // console.log(this.registerForm.value);
     this.submitted=true;
 
-    if(this.registerForm.valid){
+    if (this.registerForm.valid){
       let user: userI = this.registerForm.value;
       this.authApi.register(user).subscribe(
         (data:any) => {
-          console.log(data)
+          // console.log(data)
           this.router.navigate(['/login']);
         },
         (error) => {
@@ -43,6 +43,5 @@ export class RegisterComponent {
         }
       )
     }
-    
   }
 }
