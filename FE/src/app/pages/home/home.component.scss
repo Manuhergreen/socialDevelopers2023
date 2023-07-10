@@ -1,4 +1,5 @@
 
+
 /*banner inicial start*/
 .banner{
   background-image: url(../../../assets/carousel_1.jpg);
@@ -62,12 +63,22 @@ h1 {
 
 /*project section start*/
 
-/* project section end*/
-.proyects-section {
-  margin-top: 40px;
+
+.proyects-section{
+  background-color: #212529;
+}
+.title-section {
+ 
   margin-left: 25px;
   margin-bottom: 25px;
+  color: white;
+  padding-top: 25px;
   
+}
+
+.card-body {
+  background-color: #6C757D;
+  color: white;
 }
 
 .cards-section{
@@ -81,23 +92,36 @@ h1 {
 }
 
 .news-section{
-  margin-top: 40px;
-  margin-left: 25px;
-  margin-bottom: 25px;
+  
+  // margin-left: 25px;
+  // margin-bottom: 25px;
+  background-color: #212529;
+  padding-bottom: 25px;
 }
 
+.news-title{
+  color: white;
+  margin-left: 25px;
+  margin-bottom: 15px;
+
+}
 
 /*project profiles start*/
+.profile-section{
+  background-color: #212529;
+ 
+}
 .text-profile h1{
-  padding-left: 40px;
-  padding-bottom: 30px;
+  
   font-weight: bolder;
-  margin-bottom: 30px;
+  color: white;
+  margin-left: 25px;
 }
 .cards-profile{
   margin: 50px;
   display: flex;
-  gap: 20px;
+
+ 
 }
 .flip-card {
   background-color: transparent;
