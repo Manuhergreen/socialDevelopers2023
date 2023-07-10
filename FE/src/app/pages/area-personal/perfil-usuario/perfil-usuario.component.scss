@@ -1,10 +1,65 @@
 .profileContainer {
     display: flex;
     flex-direction: row;
- 
+    justify-content: center;
+    --opacidad-negro: 0.5;
+    background-image: linear-gradient(rgba(0, 0, 1, var(--opacidad-negro)), rgba(0, 0, 0, var(--opacidad-negro))),url("../../../../assets/perfil.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: black;
+}
+
+
+  .boton{
+    text-align:center;
+    text-decoration: none;
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    display:inline-block;
+    color: #FFF;
+    background-color: rgba(197, 115, 230, 0.883);
+    padding: 10px 50px;
+    white-space: nowrap;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin: 10px 5px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.boton:hover{
+  background-color: rgba(177, 20, 239, 0.883);
+}
+
     .profileDiv {
-      width: 60%;
+      width: 80%;
       gap: 10px;
-      border: solid 1px black;
+      padding: 10px;
+      color: white;
+      text-align: left;
     }
- }
+
+    h2{
+      text-align: left;
+      padding-bottom: 30px;
+    }
+
+    label{
+      padding: 0 10px;
+    }
+
+    input, textarea{
+      border:2px solid rgba(197, 115, 230, 0.883);
+      border-radius: 3%;
+    }
+
+  
+
+   
+
+ 

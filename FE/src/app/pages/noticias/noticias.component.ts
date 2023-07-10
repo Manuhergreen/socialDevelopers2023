@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ServicesService } from 'src/app/services/services.service';
 
 @Component({
   selector: 'app-noticias',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./noticias.component.scss']
 })
 export class NoticiasComponent {
+  
 
-}
+
+  
+    
+  }
+
+
