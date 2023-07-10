@@ -32,6 +32,31 @@
     transition: all 0.2s ease-in-out;
 }
 
+.boton__b{
+    text-align:center;
+    text-decoration: none;
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    display:inline-block;
+    color: #FFF;
+    background-color: rgba(197, 115, 230, 0.883);
+    padding: 10px 50px;
+    white-space: nowrap;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin: 10px 5px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    width: 150px;
+}
+
+.boton__b:hover{
+  background-color: rgba(177, 20, 239, 0.883);
+}
+
 .boton:hover{
   background-color: rgba(177, 20, 239, 0.883);
 }
@@ -56,6 +81,7 @@
     input, textarea{
       border:2px solid rgba(197, 115, 230, 0.883);
       border-radius: 3%;
+     
     }
 
   
