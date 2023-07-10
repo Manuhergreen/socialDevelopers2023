@@ -18,6 +18,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { FichaDeProyectoComponent } from './pages/listado-proyectos/ficha-de-proyecto/ficha-de-proyecto.component';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,8 +33,12 @@ import { FichaDeProyectoComponent } from './pages/listado-proyectos/ficha-de-pro
     SubidaProyectosComponent,
     ListadoProyectosComponent,
     NoticiasComponent,
+
     FichaDeProyectoComponent,
     
+
+
+
   ],
   imports: [
     BrowserModule,

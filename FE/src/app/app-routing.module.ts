@@ -10,10 +10,12 @@ import { PerfilUsuarioComponent } from './pages/area-personal/perfil-usuario/per
 import { SubidaProyectosComponent } from './pages/area-personal/subida-proyectos/subida-proyectos.component';
 import { FichaDeProyectoComponent } from './pages/listado-proyectos/ficha-de-proyecto/ficha-de-proyecto.component';
 
+
 const routes: Routes = [
   {path: "",component:HomeComponent },
   {path: "projects",component:ListadoProyectosComponent },
   {path: "news",component:NoticiasComponent },
+
   {path: "areaPersonal",component:AreaPersonalComponent },
   {path: "register",component:RegisterComponent },
   {path: "login",component:LoginComponent },
