@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { userI } from 'src/app/model/social.models';
 import { ServicesService } from 'src/app/services/services.service';
 
+
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
