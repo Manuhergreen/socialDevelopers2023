@@ -23,11 +23,11 @@ export class PerfilUsuarioComponent implements OnInit {
   nameF:string = "";
   lastnameF:string = "";
   emailF:string = "";
-  idF?:string = "";
-  enlace_gitF: string = "";
-  enlace_linkedinF: string= "";
-  id_userF: string = "";
-  image_profileF: string = "";
+  idF: string = "";
+  enlaceGitF: string = "";
+  enlaceLinkedinF: string= "";
+  idUserF: string = "";
+  imagenF:string = "";
   descriptionF: string = "";
 
   constructor( private form: FormBuilder, public perfilApi: PerfilService, private authApi: ServicesService,private router:Router){}
@@ -36,27 +36,23 @@ export class PerfilUsuarioComponent implements OnInit {
     this.perfilForm = this.form.group({
       name: ["", [Validators.required]],
       lastname: ["", [Validators.required]],
-      image_profile: ["" ],
+      imagen: ["" ],
       email: ["", [Validators.required]],
       description: ["", [Validators.required]],
-      enlace_git: [""],
-      enlace_linkedin: [""]
+      enlaceGit: [""],
+      enlaceLinkedin: [""]
     })
 
+    // recupero los datos del login
     this.userData = this.authApi.getUser();
     this.nameF = this.userData.name;
     this.lastnameF = this.userData.lastname;
     this.emailF = this.userData.email;
-    this.idF = this.userData._id;
-  
-    this.perfilForm.valueChanges.subscribe((data) => {
-      this.newPerfil = data;
-      // console.log("cambio");
-    })
+    this.idUserF = this.userData._id;
 
-    this.perfilApi.getUserProfileById(this.idF!).subscribe((data:any) => {
-      // console.log(data)
-      if (data)
+    // miro a ver si el usuario esta dado de alta en la parte personal.
+    this.perfilApi.getUserProfileById(this.idUserF!).subscribe((data:any) => {
+      if (data.length > 0)
        {
          this.UserDetail = data[0];
 
@@ -64,14 +60,23 @@ export class PerfilUsuarioComponent implements OnInit {
          this.lastnameF = this.UserDetail.lastname;
          this.emailF = this.UserDetail.email;
          this.idF = this.UserDetail._id;
-         this.enlace_gitF = this.UserDetail.enlace_git;
-         this.enlace_linkedinF= this.UserDetail.enlace_linkedin;
-         this.id_userF = this.UserDetail.id_user;
-         this.image_profileF = this.UserDetail.image_profile;
+         this.enlaceGitF = this.UserDetail.enlaceGit;
+         this.enlaceLinkedinF= this.UserDetail.enlaceLinkedin;
+         this.idUserF = this.UserDetail.idUser;
+         this.imagenF = this.UserDetail.imagen;
          this.descriptionF = this.UserDetail.description;
          localStorage.setItem('userProfile',JSON.stringify(this.UserDetail))
        }  
+      else {
+
+      } 
     })
+
+    // me suscribo a cambios en el formulario
+    this.perfilForm.valueChanges.subscribe((data) => {
+      this.newPerfil = data;
+})
+
   }
 
   onSubmit()
@@ -82,7 +87,7 @@ export class PerfilUsuarioComponent implements OnInit {
     // console.log(this.perfilForm.valid);
     if (this.perfilForm.valid){
       // console.log('envio datos');
-      let user: userProfileI = {...this.perfilForm.value, id_user:this.idF};
+      let user: userProfileI = {...this.perfilForm.value, idUser:this.idUserF};
       
       this.perfilApi.newPerfil(user).subscribe(
         (data:any) => {
@@ -97,13 +102,18 @@ export class PerfilUsuarioComponent implements OnInit {
   }
 
   updateUser(){
-    let user: userProfileI = {...this.perfilForm.value, id_user:this.idF};
-    this.perfilApi.updatePerfil(this.idF!, user);
+    console.log('actualizo:', this.idF)
+    let user: userProfileI = {...this.perfilForm.value, idUser:this.idUserF};
+
+    this.perfilApi.updatePerfil(this.idF, user);
     this.router.navigate(['/areaPersonal']);
   }
 
   deleteUser(){
-    this.perfilApi.deletePerfil(this.idF!);
+    console.log('borro:', this.idF)
+    
+    this.perfilApi.deletePerfil(this.idF);
+
     localStorage.removeItem('userProfile');
     this.router.navigate(['/areaPersonal']);
   }

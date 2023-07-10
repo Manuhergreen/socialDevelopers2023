@@ -10,8 +10,8 @@
       <input type="text" formControlName="lastname" [(ngModel)]="lastnameF" rows="5" ><br><br>
       <p *ngIf="(submitted && perfilForm?.get('lastname')?.hasError('required'))">Este campo es requerido</p>
 
-      <label for="image_profile">Foto:</label>
-      <input type="file" formControlName="image_profile"  [(ngModel)]="image_profileF" accept="image/*"><br><br>
+      <label for="imagen">Foto:</label>
+      <input type="file" formControlName="imagen"  [(ngModel)]="imagenF" accept="image/*"><br><br>
 
       <label for="mail">E-mail:</label>
       <input type="email" formControlName="email" [(ngModel)]="emailF" ><br><br>
@@ -21,11 +21,11 @@
       <textarea formControlName="description" [(ngModel)]="descriptionF" rows="5" cols="40" ></textarea><br><br>
       <p *ngIf="(submitted && perfilForm?.get('description')?.hasError('required'))">Este campo es requerido</p>
 
-      <label for="enlace_git">Enlace a Git:</label>
-      <input type="url" formControlName="enlace_git" [(ngModel)]="enlace_gitF"><br><br>
+      <label for="enlaceGit">Enlace a Git:</label>
+      <input type="url" formControlName="enlaceGit" [(ngModel)]="enlaceGitF"><br><br>
 
-      <label for="enlace_linkedin">Enlace a LinkedIn:</label>
-      <input type="url" formControlName="enlace_linkedin" [(ngModel)]="enlace_linkedinF"><br><br>
+      <label for="enlaceLinkedin">Enlace a LinkedIn:</label>
+      <input type="url" formControlName="enlaceLinkedin" [(ngModel)]="enlaceLinkedinF"><br><br>
 
       <input class="boton"  type="submit" *ngIf="!perfilApi.getUserProfile()" value="Enviar">
       <input routerLink="/areaPersonal" class="boton__b"  type="submit" value="Atrás">
