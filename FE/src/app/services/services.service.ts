@@ -16,14 +16,17 @@ export class ServicesService {
     lastname: '',
     email:'',
     password:'',
+    addnews:false,
     role:''
   }
   
   constructor(private http:HttpClient) {}
 
- 
+   register(user:userI){
+    // console.log(user);
+    if (!user.addnews)
+      user.addnews = false;
 
-  register(user:userI){
     return this.http.post(`${this.db_url}/register`, user)
   }
 

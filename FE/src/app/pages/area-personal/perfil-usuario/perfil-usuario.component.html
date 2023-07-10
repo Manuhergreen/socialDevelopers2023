@@ -4,18 +4,22 @@
     <form [formGroup]="perfilForm" (ngSubmit)="onSubmit()">
       <label for="name">Nombre:</label>
       <input type="text" formControlName="name" required><br><br>
+      <p *ngIf="(submitted && perfilForm?.get('name')?.hasError('required'))">Este campo es requerido</p>
 
       <label for="lastname">Apellido:</label>
       <input type="text" formControlName="lastname" rows="5" required><br><br>
+      <p *ngIf="(submitted && perfilForm?.get('lastname')?.hasError('required'))">Este campo es requerido</p>
 
       <label for="image_profile">Foto:</label>
       <input type="file" formControlName="image_profile" accept="image/*"><br><br>
 
       <label for="mail">E-mail:</label>
       <input type="email" formControlName="email" required><br><br>
+      <p *ngIf="(submitted && perfilForm?.get('email')?.hasError('required'))">Este campo es requerido</p>
 
       <label for="description">Descripción:</label><br>
       <textarea formControlName="description" rows="5" cols="40" required></textarea><br><br>
+      <p *ngIf="(submitted && perfilForm?.get('description')?.hasError('required'))">Este campo es requerido</p>
 
       <label for="enlace_git">Enlace a Git:</label>
       <input type="url" formControlName="enlaceGit" required><br><br>
