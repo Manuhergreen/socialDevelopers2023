@@ -37,6 +37,7 @@ export class ServicesService {
   logOut(){
     localStorage.removeItem('token');
     localStorage.removeItem('user');
+    localStorage.removeItem('userProfile');
   }
 
   getToken(){
