@@ -11,7 +11,7 @@ export class ServicesService {
   
 
   public userData: userI ={
-    id: '',
+    _id: '',
     name: '',
     lastname: '',
     email:'',
@@ -47,6 +47,11 @@ export class ServicesService {
     let user = JSON.parse(String(localStorage.getItem('user')));
     // console.log('nombre:', user.name);
     return user?.name;
+  }
+  getUser(){
+    let user = JSON.parse(String(localStorage.getItem('user')));
+    // console.log('nombre:', user.name);
+    return user;
   }
   
 }

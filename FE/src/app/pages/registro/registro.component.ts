@@ -33,6 +33,7 @@ export class RegisterComponent {
     // console.log(this.registerForm.value);
     this.submitted=true;
 
+    console.log(this.registerForm.valid);
     if (this.registerForm.valid){
       let user: userI = this.registerForm.value;
       this.authApi.register(user).subscribe(

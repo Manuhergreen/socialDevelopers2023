@@ -10,13 +10,12 @@ export class PerfilService {
   db_urlPerfil: string = "http://localhost:5200/perfil";
 
   public userProfileData: userProfileI = {
-    id: '',
+    _id: '',
     id_user: '',
     name: '',
     lastname: '',
     image_profile: '',
     email:'',
-    addnews:false,
     description: '',
     enlace_git: '',
     enlace_linkedin: '',
@@ -24,8 +23,12 @@ export class PerfilService {
 
   constructor(private http:HttpClient) { }
 
+  getUserProfileById(id:string) {
+    return this.http.get(`${this.db_urlPerfil}/${id}`)
+  }
+
   newPerfil(user:userProfileI){
-     console.log(user);
+    //  console.log(user);
      return this.http.post(`${this.db_urlPerfil}`, user)
   }
 }
