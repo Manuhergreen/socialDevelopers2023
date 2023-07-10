@@ -7,27 +7,30 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
+        
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center">
               <!-- <li class="nav-item">
                 <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
               </li> -->
               <li class="nav-item">
                 <a class="nav-link" routerLink="/projects">Listado de proyectos</a>
               </li>
-              <li class="nav-item__a">
+              <li class="nav-item">
                 <a class="nav-link" routerLink="/news">Noticias</a>
               </li>
+            </ul>
+              <ul class="navbar-nav d-flex justify-content-end align-items-center">
               <li class="nav-item">
                 <a class="nav-link" routerLink="/areaPersonal">Area Personal</a>
               </li>
-              <li>
+              <li class="nav-item">
                 <a class="nav-link" *ngIf="!authApi.getToken()" routerLink="/register">Regístrate</a>
                
               </li>
-              <li>
+              <li class="nav-item">
                 <a class="nav-link" *ngIf="!authApi.getToken()" routerLink="/login">Login</a>
               </li>
-              <li>
+              <li class="nav-item">
                 <!-- <a class="nav-link">Nombre Usuario</a> -->
                 <p class="nav-link" *ngIf="authApi.getToken()">Bienvenid@! {{authApi.getNombre()}}</p>
               </li>
@@ -35,9 +38,6 @@
                 <button class="nav-link" *ngIf="authApi.getToken()" (click)="logout()">Logout</button>
                 <!-- <button class="button">Logout</button> -->
               </li>
-            </ul>
-            <ul>
-              
             </ul>
           </div>
         </div>
