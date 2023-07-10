@@ -1,5 +1,5 @@
 export interface userI{
-    id?: string;
+    _id?: string;
     name: string;
     lastname: string;
     email:string;
@@ -9,20 +9,19 @@ export interface userI{
 }
 
 export interface userProfileI{
-    id: string;
+    _id: string;
     id_user: string;
     name: string;
     lastname: string;
     image_profile: string;
     email: string;
-    addnews: boolean;
     description: string;
     enlace_git: string;
     enlace_linkedin: string;
 }
 
 export interface projectsI{
-    id:string,
+    _id:string,
     id_userprof: string,
     name_project: string;
     imagen_project: string;
