@@ -9,7 +9,7 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-color: black;
-  color: white;
+ 
 }
 
   .projectDiv {
@@ -27,7 +27,7 @@
 
  
   input, textarea{
-    border:2px solid rgba(197, 115, 230, 0.883);
+    border:2px solid yellow;
     border-radius: 3%;
   }
 
@@ -36,8 +36,7 @@
     text-decoration: none;
     font-family: 'Helvetica Neue', Helvetica, sans-serif;
     display:inline-block;
-    color: #FFF;
-    background-color: rgba(197, 115, 230, 0.883);
+    background-color: yellow;
     padding: 10px 50px;
     white-space: nowrap;
     -webkit-border-radius: 5px;
@@ -53,7 +52,7 @@
   }
 
   .boton:hover{
-    background-color: rgba(177, 20, 239, 0.883);
+    background-color: rgba(203, 221, 10, 0.883);
   }
 
  
