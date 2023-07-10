@@ -20,6 +20,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { FichaDeProyectoComponent } from './pages/listado-proyectos/ficha-de-proyecto/ficha-de-proyecto.component';
+import { ListadoUsuariosComponent } from './pages/listado-usuarios/listado-usuarios.component';
 
 
 
@@ -38,12 +39,9 @@ import { FichaDeProyectoComponent } from './pages/listado-proyectos/ficha-de-pro
     SubidaProyectosComponent,
     ListadoProyectosComponent,
     NoticiasComponent,
-
+    ListadoUsuariosComponent,
     FichaDeProyectoComponent,
     
-
-
-
   ],
   imports: [
     BrowserModule,

@@ -5,7 +5,9 @@
 .nav-link{
     color:white;
 }
-
+.logo{
+    cursor: pointer;
+}
 .navbar-toggler{
     background-color: white;
 }
@@ -18,7 +20,7 @@
 .nav-item:hover{
     transform: scale(1.00);
     overflow: hidden;
-    border: 1.2px solid rgba(197, 115, 230, 0.883);
+    border: 1.2px solid yellow;
 }
 
 
