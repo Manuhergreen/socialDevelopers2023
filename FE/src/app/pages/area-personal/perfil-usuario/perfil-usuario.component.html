@@ -1,7 +1,7 @@
 <div class="profileContainer">
   <div class="profileDiv">
     <h2>Complete su perfil</h2>
-    <form [formGroup]="perfilForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="perfilForm" (ngSubmit)="onSubmit()" >
       <label for="name">Nombre:</label>
       <input type="text" formControlName="name" [(ngModel)]="nameF"><br><br>
       <p *ngIf="(submitted && perfilForm?.get('name')?.hasError('required'))">Este campo es requerido</p>
@@ -30,9 +30,9 @@
       <input class="boton"  type="submit" *ngIf="!perfilApi.getUserProfile()" value="Enviar">
       <input routerLink="/areaPersonal" class="boton__b"  type="submit" value="Atrás">
     </form>
-    <button class="boton"  (Click) = "updateUser()" *ngIf="perfilApi.getUserProfile()">Modificar</button>
-    <button class="boton"  (Click) = "deleteUser()" *ngIf="perfilApi.getUserProfile()">Eliminar</button>
-  </div>
+    <button class="boton"  (click) = "updateUser()" *ngIf="perfilApi.getUserProfile()">Modificar</button>
+    <button class="boton"  (click) = "deleteUser()" *ngIf="perfilApi.getUserProfile()">Eliminar</button>
+</div>
   <div>
     <!-- Previsualizacion de los datos     -->
     
