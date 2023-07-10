@@ -11,7 +11,7 @@ export class ProjectService {
   constructor(private http:HttpClient) { }
 
   getProjectList(Pagina:string) {
-    return this.http.get(`${this.db_urlProject}/lista/${Pagina}`)
+    return this.http.get(`${this.db_urlProject}/${Pagina}`)
   }
 
   getProjectById(id:string) {
