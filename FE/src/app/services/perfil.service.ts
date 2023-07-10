@@ -11,14 +11,14 @@ export class PerfilService {
 
   public userProfileData: userProfileI = {
     _id: '',
-    id_user: '',
+    idUser: '',
     name: '',
     lastname: '',
-    image_profile: '',
+    imagen: '',
     email:'',
     description: '',
-    enlace_git: '',
-    enlace_linkedin: '',
+    enlaceGit: '',
+    enlaceLinkedin: '',
   }
 
   constructor(private http:HttpClient) { }
