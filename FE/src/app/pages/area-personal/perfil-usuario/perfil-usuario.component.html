@@ -10,15 +10,15 @@
       <input type="text" formControlName="lastname" rows="5" ><br><br>
       <p *ngIf="(submitted && perfilForm?.get('lastname')?.hasError('required'))">Este campo es requerido</p>
 
-      <label for="image_profile">Foto:</label>
-      <input type="file" formControlName="image_profile" accept="image/*"><br><br>
+      <label class="image" for="image_profile">Foto:</label>
+      <input type="file" formControlName="image_profile"  accept="image/*"><br><br>
 
       <label for="mail">E-mail:</label>
       <input type="email" formControlName="email" ><br><br>
       <p *ngIf="(submitted && perfilForm?.get('email')?.hasError('required'))">Este campo es requerido</p>
 
       <label for="description">Descripción:</label><br>
-      <textarea formControlName="description" rows="5" cols="40" ></textarea><br><br>
+      <textarea formControlName="description" rows="4" cols="30" ></textarea><br><br>
       <p *ngIf="(submitted && perfilForm?.get('description')?.hasError('required'))">Este campo es requerido</p>
 
       <label for="enlace_git">Enlace a Git:</label>
@@ -27,10 +27,23 @@
       <label for="enlace_linkedin">Enlace a LinkedIn:</label>
       <input type="url" formControlName="enlace_linkedin"><br><br>
 
-      <input class="boton"  type="submit" value="Enviar">
-      <input class="boton"  type="submit" value="Modificar">
-      <input class="boton"  type="submit" value="Eliminar">
-      <input routerLink="/areaPersonal" class="boton__b"  type="submit" value="Atrás">
+      <div class="row justify-content-start">
+        <div class="col-4">
+          <input class="boton"  type="submit" value="Enviar">
+        </div>
+        <div class="col-4">
+          <input class="boton"  type="submit" value="Modificar">
+        </div>
+      </div>
+
+      <div class="row justify-content-start">
+        <div class="col-4">
+          <input class="boton"  type="submit" value="Eliminar">
+        </div>
+        <div class="col-4">
+          <input routerLink="/areaPersonal" class="boton__b"  type="submit" value="Atrás">
+        </div>
+      </div>
     </form>
   </div>
   <div>
