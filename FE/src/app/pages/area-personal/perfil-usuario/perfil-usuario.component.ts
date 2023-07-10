@@ -103,7 +103,6 @@ export class PerfilUsuarioComponent implements OnInit {
   }
 
   deleteUser(){
-    console.log('voy a borrar');
     this.perfilApi.deletePerfil(this.idF!);
     localStorage.removeItem('userProfile');
     this.router.navigate(['/areaPersonal']);

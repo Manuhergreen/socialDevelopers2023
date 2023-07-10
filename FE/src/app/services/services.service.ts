@@ -27,7 +27,7 @@ export class ServicesService {
     if (!user.addnews)
       user.addnews = false;
 
-    return this.http.post(`${this.db_url}/register`, user)
+    return this.http.post(`${this.db_url}/register`, user )
   }
 
   login(user:userI){

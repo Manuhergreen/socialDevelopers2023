@@ -33,11 +33,10 @@ export class PerfilService {
 
   newPerfil(user:userProfileI){
     //  console.log(user);
-     return this.http.post(`${this.db_urlPerfil}`, user)
+     return this.http.post(`${this.db_urlPerfil}`, user )
   }
 
   deletePerfil (id:string) {
-    console.log('borro');
     return this.http.delete(`${this.db_urlPerfil}/${id}`)
   }
 
