@@ -15,6 +15,7 @@ import { ListadoProyectosComponent } from './pages/listado-proyectos/listado-pro
 import { NoticiasComponent } from './pages/noticias/noticias.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { FichaDeProyectoComponent } from './pages/listado-proyectos/ficha-de-proyecto/ficha-de-proyecto.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import {HttpClientModule} from '@angular/common/http';
     SubidaProyectosComponent,
     ListadoProyectosComponent,
     NoticiasComponent,
+    FichaDeProyectoComponent,
     
   ],
   imports: [
