@@ -4,17 +4,18 @@
   <div class="card mb-3">
     <div class="row g-0 d-flex align-items-center">
       <div class="col-lg-4 d-none d-lg-flex">
-        <img src="https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg" alt="Trendy Pants and Shoes"
+        <img src="../../../assets/logoLogin.jpg" alt="Trendy Pants and Shoes"
           class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" />
       </div>
       <div class="col-lg-8">
         <div class="card-body py-5 px-md-5">
 
           <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <p class="maquina-escribir">Hola Dev <span>👋🏻</span> <br/>no te pierdas de nada! <span class="cursor">|</span></p>
             <!-- Email input -->
             <div class="form-outline mb-4">
               <input type="email"  class="form-control" formControlName="email" />
-              <label class="form-label" for="email">Email address</label>
+              <label class="form-label" row="3" for="email">Email address</label>
             </div>
 
             <!-- Password input -->
@@ -35,7 +36,7 @@
 
               <div class="col">
                 <!-- Simple link -->
-                <a href="#!">Forgot password?</a>
+                <a class="col" href="#!">Forgot password?</a>
               </div>
             </div>
 
