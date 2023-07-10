@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { userProfileI } from '../model/social.models';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -37,11 +36,13 @@ export class PerfilService {
   }
 
   deletePerfil (id:string) {
-    return this.http.delete(`${this.db_urlPerfil}/${id}`)
+    console.log(`${this.db_urlPerfil}/delete/${id}`)
+    return this.http.delete(`${this.db_urlPerfil}/delete/${id}`)
   }
 
   updatePerfil(id:string, user:userProfileI){
-    //  console.log(user);
+     console.log(user);
+     console.log(`${this.db_urlPerfil}/${id}`);
      return this.http.put(`${this.db_urlPerfil}/${id}`, user)
   }
 

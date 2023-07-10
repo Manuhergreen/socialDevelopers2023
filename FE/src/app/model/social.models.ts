@@ -1,11 +1,11 @@
 export interface userI{
-    _id?: string;
+    _id: string;
     name: string;
     lastname: string;
     email:string;
     password:string;
     addnews: boolean;
-    role?: string;
+    role: string;
 }
 
 export interface userProfileI{
@@ -23,13 +23,19 @@ export interface userProfileI{
 export interface projectsI{
     _id:string,
     idUserProf: string,
-    nameProject: string;
+    name: string;
     imagen: string;
-    frameworks: string;
+    html:string;
+    css:string;
+    react:string;
+    angular:string;
+    php:string;
+    jscript:string;
+    python:string;
+    java:string;
+    otros:string;
+    otherText:string;
     description: string;
     enlaceGit: string;
     enlaceProyecto:string;
 }
-
-
-

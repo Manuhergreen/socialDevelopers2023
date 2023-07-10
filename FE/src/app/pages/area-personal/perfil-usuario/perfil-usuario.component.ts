@@ -23,11 +23,11 @@ export class PerfilUsuarioComponent implements OnInit {
   nameF:string = "";
   lastnameF:string = "";
   emailF:string = "";
-  idF?:string = "";
+  idF: string = "";
   enlaceGitF: string = "";
   enlaceLinkedinF: string= "";
   idUserF: string = "";
-  imagenF: string = "";
+  imagenF:string = "";
   descriptionF: string = "";
 
   constructor( private form: FormBuilder, public perfilApi: PerfilService, private authApi: ServicesService,private router:Router){}
@@ -48,12 +48,11 @@ export class PerfilUsuarioComponent implements OnInit {
     this.nameF = this.userData.name;
     this.lastnameF = this.userData.lastname;
     this.emailF = this.userData.email;
-    this.idF = this.userData._id;
+    this.idUserF = this.userData._id;
 
     // miro a ver si el usuario esta dado de alta en la parte personal.
-    this.perfilApi.getUserProfileById(this.idF!).subscribe((data:any) => {
-      // console.log(data)
-      if (data)
+    this.perfilApi.getUserProfileById(this.idUserF!).subscribe((data:any) => {
+      if (data.length > 0)
        {
          this.UserDetail = data[0];
 
@@ -88,7 +87,7 @@ export class PerfilUsuarioComponent implements OnInit {
     // console.log(this.perfilForm.valid);
     if (this.perfilForm.valid){
       // console.log('envio datos');
-      let user: userProfileI = {...this.perfilForm.value, id_user:this.idF};
+      let user: userProfileI = {...this.perfilForm.value, idUser:this.idUserF};
       
       this.perfilApi.newPerfil(user).subscribe(
         (data:any) => {
@@ -103,13 +102,18 @@ export class PerfilUsuarioComponent implements OnInit {
   }
 
   updateUser(){
-    let user: userProfileI = {...this.perfilForm.value, id_user:this.idF};
-    this.perfilApi.updatePerfil(this.idF!, user);
+    console.log('actualizo:', this.idF)
+    let user: userProfileI = {...this.perfilForm.value, idUser:this.idUserF};
+
+    this.perfilApi.updatePerfil(this.idF, user);
     this.router.navigate(['/areaPersonal']);
   }
 
   deleteUser(){
-    this.perfilApi.deletePerfil(this.idF!);
+    console.log('borro:', this.idF)
+    
+    this.perfilApi.deletePerfil(this.idF);
+
     localStorage.removeItem('userProfile');
     this.router.navigate(['/areaPersonal']);
   }
