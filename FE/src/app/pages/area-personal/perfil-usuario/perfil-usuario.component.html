@@ -2,26 +2,26 @@
   <div class="profileDiv">
     <h2>Formulario</h2>
     <form [formGroup]="perfilForm" (ngSubmit)="onSubmit()">
-      <label for="nombre">Nombre:</label>
+      <label for="name">Nombre:</label>
       <input type="text" formControlName="name" required><br><br>
 
-      <label for="apellido">Apellido:</label>
-      <input type="text" formControlName="apellidos" required><br><br>
+      <label for="lastname">Apellido:</label>
+      <input type="text" formControlName="lastname" required><br><br>
+
+      <label for="image_profile">Foto:</label>
+      <input type="file" formControlName="image_profile" accept="image/*"><br><br>
 
       <label for="mail">E-mail:</label>
       <input type="email" formControlName="email" required><br><br>
 
-      <label for="foto">Foto:</label>
-      <input type="file" formControlName="foto" accept="image/*"><br><br>
+      <label for="description">Descripción:</label><br>
+      <textarea formControlName="description" rows="4" cols="50" required></textarea><br><br>
 
-      <label for="descripcion">Descripción:</label><br>
-      <textarea formControlName="descripcion" rows="4" cols="50" required></textarea><br><br>
-
-      <label for="git">Enlace a Git:</label>
+      <label for="enlace_git">Enlace a Git:</label>
       <input type="url" formControlName="enlaceGit" required><br><br>
 
-      <label for="linkedin">Enlace a LinkedIn:</label>
-      <input type="url" formControlName="enlaceLinkedin" required><br><br>
+      <label for="enlace_linkedin">Enlace a LinkedIn:</label>
+      <input type="url" formControlName="enlace_linkedin" required><br><br>
 
       <input type="submit" value="Enviar">
     </form>

@@ -1,80 +1,47 @@
+*{
+    background-color: black;
+}
 
-// nav{
-//     display: flex;
-//     background-color: rgb(27, 85, 52);
-//     text-align: center;
-//     padding-right: 10px;
-//     justify-content: space-between;
-//     align-items: center;
-    
-//  .first{
-//     display: flex;
-//     align-items: center;
-//  }   
-    
-// }
-// .login{
-//     display: flex;
-// }
-// nav img{
-//     width: 125px;
-//     cursor: pointer;
-    
-// }
+.nav-link{
+    color:white;
+}
 
-// a {
-//     text-decoration: none;
-//     margin-left: 10px;
-//     --width: 150px;
-//     --timing: 2s;
-//     border: 0;
-//     width: var(--width);
-//     padding-block: 1em;
-//     color: #fff;
-//     font-weight: bold;
-//     font-size: 1em;
-//     background: rgb(64, 192, 87);
-//     transition: all 0.2s;
-//     border-radius: 3px;
-//   }
-  
-//   a:hover {
-//     background-image: linear-gradient(to right, rgb(250, 82, 82), rgb(250, 82, 82) 16.65%, rgb(190, 75, 219) 16.65%, rgb(190, 75, 219) 33.3%, rgb(76, 110, 245) 33.3%, rgb(76, 110, 245) 49.95%, rgb(64, 192, 87) 49.95%, rgb(64, 192, 87) 66.6%, rgb(250, 176, 5) 66.6%, rgb(250, 176, 5) 83.25%, rgb(253, 126, 20) 83.25%, rgb(253, 126, 20) 100%, rgb(250, 82, 82) 100%);
-//     animation: var(--timing) linear dance6123 infinite;
-//     transform: scale(1.1) translateY(-1px);
-//   }
-  
-//   @keyframes dance6123 {
-//     to {
-//       background-position: var(--width);
-//     }
-//   }
+.nav-item__a{
+    margin-right: 600px;
+}
 
-// .button{
-//     margin-left: 10px;
-//     --width: 150px;
-//     --timing: 2s;
-//     border: 0;
-//     width: var(--width);
-//     padding-block: 1em;
-//     color: #fff;
-//     font-weight: bold;
-//     font-size: 1em;
-//     background: rgb(64, 192, 87);
-//     transition: all 0.2s;
-//     border-radius: 3px;
-// }
-      
-//       .button:hover {
-//         background-image: linear-gradient(to right, rgb(250, 82, 82), rgb(250, 82, 82) 16.65%, rgb(190, 75, 219) 16.65%, rgb(190, 75, 219) 33.3%, rgb(76, 110, 245) 33.3%, rgb(76, 110, 245) 49.95%, rgb(64, 192, 87) 49.95%, rgb(64, 192, 87) 66.6%, rgb(250, 176, 5) 66.6%, rgb(250, 176, 5) 83.25%, rgb(253, 126, 20) 83.25%, rgb(253, 126, 20) 100%, rgb(250, 82, 82) 100%);
-//         animation: var(--timing) linear dance6123 infinite;
-//         transform: scale(1.1) translateY(-1px);
-//       }
-      
-//       @keyframes dance6123 {
-//         to {
-//           background-position: var(--width);
-//         }
-//       }
+.navbar-toggler{
+    background-color: white;
+}
+
+.button{
+    margin: 0 5px;
+    background-color:black;
+    border: 1.2px solid rgba(197, 115, 230, 0.883);
+    color: white;
+    padding: 10px;
+}
+
+.logo{
+    padding: 0 10px;
+}
+
+.logo:hover{
+        //transform: scale(1.05);
+        //overflow: hidden;
+        border: 2.2px dotted rgba(197, 115, 230, 0.883);
+}
+
+.nav-link:hover{
+        transform: scale(1.05);
+        overflow: hidden;
+        border: 2.2px solid rgba(197, 115, 230, 0.883);
+}
+
+.nav-item__a:hover{
+        transform: scale(1.05);
+        overflow: hidden;
+        border: 2.2px solid rgba(197, 115, 230, 0.883);
+}
 
 
