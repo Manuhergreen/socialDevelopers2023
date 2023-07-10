@@ -30,7 +30,7 @@ export class LoginComponent {
     this.submitted=true;
 
     if (this.loginForm.valid){
-        console.log('envio el dato');
+        // console.log('envio el dato');
         let user: userI = this.loginForm.value;
         this.authApi.login(user).subscribe(
          (data:any)=>{

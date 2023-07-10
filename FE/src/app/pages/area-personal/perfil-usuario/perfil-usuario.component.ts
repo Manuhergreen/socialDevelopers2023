@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ServicesService } from 'src/app/services/services.service';
 import { Router } from '@angular/router';
 import { userProfileI } from 'src/app/model/social.models';
+import { PerfilService } from 'src/app/services/perfil.service';
 
 @Component({
   selector: 'app-perfil-usuario',
@@ -17,7 +17,7 @@ export class PerfilUsuarioComponent implements OnInit {
 
   newPerfil!: userProfileI ; 
 
-  constructor( private form: FormBuilder, private authApi: ServicesService, private router:Router){}
+  constructor( private form: FormBuilder, private perfilApi: PerfilService, private router:Router){}
 
   ngOnInit(){
     this.perfilForm = this.form.group({
@@ -27,17 +27,34 @@ export class PerfilUsuarioComponent implements OnInit {
       email: ["", [Validators.required]],
       description: ["", [Validators.required]],
       enlaceGit: [""],
-      enlace_linkedin: [""],
+      enlace_linkedin: [""]
     })
 
     this.perfilForm.valueChanges.subscribe((data) => {
       this.newPerfil = data;
-      console.log("cambio");
+      // console.log("cambio");
     })
   }
 
   onSubmit()
   {
+    console.log(this.perfilForm.value);
+    this.submitted=true;
+
+    console.log(this.perfilForm.valid);
+    if (this.perfilForm.valid){
+      console.log('envio datos');
+      let user: userProfileI = this.perfilForm.value;
+      this.perfilApi.newPerfil(user).subscribe(
+        (data:any) => {
+          // console.log(data)
+          // this.router.navigate(['/login']);
+        },
+        (error) => {
+          this.errors = error;
+        }
+      )
+    }
     
   }
 }
