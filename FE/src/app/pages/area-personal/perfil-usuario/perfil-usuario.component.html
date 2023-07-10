@@ -27,11 +27,11 @@
       <label for="enlace_linkedin">Enlace a LinkedIn:</label>
       <input type="url" formControlName="enlace_linkedin" [(ngModel)]="enlace_linkedinF"><br><br>
 
-      <input class="boton"  type="submit" value="Enviar">
-      <input class="boton"  type="submit" value="Modificar">
-      <input class="boton"  type="submit" value="Eliminar">
+      <input class="boton"  type="submit" *ngIf="!perfilApi.getUserProfile()" value="Enviar">
       <input routerLink="/areaPersonal" class="boton__b"  type="submit" value="Atrás">
     </form>
+    <button class="boton"  (Click) = "updateUser()" *ngIf="perfilApi.getUserProfile()">Modificar</button>
+    <button class="boton"  (Click) = "deleteUser()" *ngIf="perfilApi.getUserProfile()">Eliminar</button>
   </div>
   <div>
     <!-- Previsualizacion de los datos     -->

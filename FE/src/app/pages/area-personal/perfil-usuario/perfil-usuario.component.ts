@@ -30,7 +30,7 @@ export class PerfilUsuarioComponent implements OnInit {
   image_profileF: string = "";
   descriptionF: string = "";
 
-  constructor( private form: FormBuilder, private perfilApi: PerfilService, private authApi: ServicesService,private router:Router){}
+  constructor( private form: FormBuilder, public perfilApi: PerfilService, private authApi: ServicesService,private router:Router){}
 
   ngOnInit(){
     this.perfilForm = this.form.group({
@@ -55,7 +55,7 @@ export class PerfilUsuarioComponent implements OnInit {
     })
 
     this.perfilApi.getUserProfileById(this.idF!).subscribe((data:any) => {
-      console.log(data)
+      // console.log(data)
       if (data)
        {
          this.UserDetail = data[0];
@@ -69,18 +69,19 @@ export class PerfilUsuarioComponent implements OnInit {
          this.id_userF = this.UserDetail.id_user;
          this.image_profileF = this.UserDetail.image_profile;
          this.descriptionF = this.UserDetail.description;
+         localStorage.setItem('userProfile',JSON.stringify(this.UserDetail))
        }  
     })
   }
 
   onSubmit()
   {
-    console.log(this.perfilForm.value);
+    // console.log(this.perfilForm.value);
     this.submitted=true;
 
-    console.log(this.perfilForm.valid);
+    // console.log(this.perfilForm.valid);
     if (this.perfilForm.valid){
-      console.log('envio datos');
+      // console.log('envio datos');
       let user: userProfileI = {...this.perfilForm.value, id_user:this.idF};
       
       this.perfilApi.newPerfil(user).subscribe(
@@ -95,6 +96,16 @@ export class PerfilUsuarioComponent implements OnInit {
     }
   }
 
+  updateUser(){
+    let user: userProfileI = {...this.perfilForm.value, id_user:this.idF};
+    this.perfilApi.updatePerfil(this.idF!, user);
+    this.router.navigate(['/areaPersonal']);
+  }
 
-
+  deleteUser(){
+    console.log('voy a borrar');
+    this.perfilApi.deletePerfil(this.idF!);
+    localStorage.removeItem('userProfile');
+    this.router.navigate(['/areaPersonal']);
+  }
 }
