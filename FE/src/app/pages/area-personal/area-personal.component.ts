@@ -1,8 +1,9 @@
 import { ServicesService } from 'src/app/services/services.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { userProfileI, userI } from 'src/app/model/social.models';
+import { userProfileI, userI, projectsI } from 'src/app/model/social.models';
 import { PerfilService } from 'src/app/services/perfil.service';
+import { ProjectService } from 'src/app/services/project.service';
 
 @Component({
   selector: 'app-area-personal',
@@ -13,8 +14,9 @@ export class AreaPersonalComponent implements OnInit {
   UserDetail!: userProfileI ; 
   userData!: userI;
   idUserF: string = "";
+  projectList!: projectsI[];
 
-  constructor( public perfilApi: PerfilService, private authApi: ServicesService,private router:Router){}
+  constructor( public perfilApi: PerfilService, public projectApi: ProjectService, private authApi: ServicesService,private router:Router){}
 
   ngOnInit(){
     // recupero los datos del login
@@ -27,7 +29,19 @@ export class AreaPersonalComponent implements OnInit {
        {
          this.UserDetail = data[0];
          localStorage.setItem('userProfile',JSON.stringify(this.UserDetail))
+
+         // busco los projectos del usuario logado.
+         this.projectApi.getProjectByUser(this.UserDetail._id!).subscribe((data:any) => {
+            console.log(data);
+            if (data.length > 0)
+             {
+             }  
+         })
        }  
     })
+
+
+    
+
   }
 }
