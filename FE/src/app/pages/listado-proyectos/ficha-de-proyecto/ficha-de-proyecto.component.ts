@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { projectsI } from 'src/app/model/social.models';
 import { ProjectService } from 'src/app/services/project.service';
 
 @Component({
@@ -8,13 +9,24 @@ import { ProjectService } from 'src/app/services/project.service';
   styleUrls: ['./ficha-de-proyecto.component.scss']
 })
 export class FichaDeProyectoComponent {
-  id!: number;
+  id!: any;
+  projectData!: projectsI;
 
-  constructor (private proyecto:ProjectService, private activatedRoute:ActivatedRoute, private router:Router){}
+  constructor (private projectApi:ProjectService, private activatedRoute:ActivatedRoute, private router:Router){}
+
   ngOnInit():void{
     this.activatedRoute.paramMap.subscribe(params=>{
-      this.id= Number(params.get("id"))
+      this.id = params.get("id");
     })
+
+    this.projectApi.getProjectById(this.id).subscribe((data:any) => {
+      console.log(data);
+      if (data)
+       {
+        this.projectData = {...data};
+      }  
+    })
+
   }
 
 }
