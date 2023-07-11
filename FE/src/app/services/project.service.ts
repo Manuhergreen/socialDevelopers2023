@@ -13,9 +13,13 @@ export class ProjectService {
   getProjectList(Pagina:string) {
     return this.http.get(`${this.db_urlProject}/${Pagina}`)
   }
+  
+  getProjectNews() {
+    return this.http.get(`${this.db_urlProject}/novedad`)
+  }
 
   getProjectById(id:string) {
-    return this.http.get(`${this.db_urlProject}/${id}`)
+    return this.http.get(`${this.db_urlProject}/project/${id}`)
   }
 
   addProject(project:projectsI){
