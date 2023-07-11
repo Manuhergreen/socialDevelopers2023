@@ -22,6 +22,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FichaDeProyectoComponent } from './pages/listado-proyectos/ficha-de-proyecto/ficha-de-proyecto.component';
 import { ListadoUsuariosComponent } from './pages/listado-usuarios/listado-usuarios.component';
 
+import { DetalleUsuarioComponent } from './pages/listado-usuarios/detalle-usuario/detalle-usuario.component';
+
 
 
 
@@ -41,6 +43,8 @@ import { ListadoUsuariosComponent } from './pages/listado-usuarios/listado-usuar
     NoticiasComponent,
     ListadoUsuariosComponent,
     FichaDeProyectoComponent,
+    DetalleUsuarioComponent,
+   
     
   ],
   imports: [

@@ -24,12 +24,29 @@
                     <p>Entra aqui para subir tu proyecto y asi compartirlo con toda la comunidad de Desarrolladores</p>
                 </div>
                 <div class="button-area">
-                    <button class="btn btn-warning" routerLink="/subidaProyectos" >Subir proyecto</button>
+                    <button class="btn btn-warning" *ngIf="this.perfilApi.getUserProfile();"routerLink="/subidaProyectos" >Subir proyecto</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+  
+<div class="projects-area">
+     
+        <ul class="pagination">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+          </li>
+          <li class="page-item"><a class="page-link custom-page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link custom-page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link custom-page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Siguiente</a>
+          </li>
+        </ul>
+  </div>
+  
+ 
 
     
 
