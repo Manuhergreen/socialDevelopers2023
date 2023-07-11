@@ -25,9 +25,11 @@ export class PerfilService {
   getUserList(Pagina:string) {
     return this.http.get(`${this.db_urlPerfil}/${Pagina}`)
   }
-
+  getUserProfNews() {
+    return this.http.get(`${this.db_urlPerfil}/novedad`)
+  }
   getUserProfileById(id:string) {
-    return this.http.get(`${this.db_urlPerfil}/${id}`)
+    return this.http.get(`${this.db_urlPerfil}/perfil/${id}`)
   }
 
   newPerfil(user:userProfileI){
