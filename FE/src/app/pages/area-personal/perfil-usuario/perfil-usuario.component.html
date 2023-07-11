@@ -11,7 +11,7 @@
       <p *ngIf="(submitted && perfilForm?.get('lastname')?.hasError('required'))">Este campo es requerido</p>
 
       <label for="imagen">Foto:</label>
-      <input type="file" formControlName="imagen"  [(ngModel)]="imagenF" accept="image/*"><br><br>
+      <input type="file" formControlName="imagen"  [(ngModel)]="imagenF" accept="image/*" (change)="onFileSelected($event)"><br><br>
 
       <label for="mail">E-mail:</label>
       <input type="email" formControlName="email" [(ngModel)]="emailF" ><br><br>
@@ -27,16 +27,10 @@
       <label for="enlaceLinkedin">Enlace a LinkedIn:</label>
       <input type="url" formControlName="enlaceLinkedin" [(ngModel)]="enlaceLinkedinF"><br><br>
 
-    <div class="buttons d-flex justify-content-left">
-      <input class="boton"  type="submit" *ngIf="!perfilApi.getUserProfile()" value="Enviar">
-
-      <button class="boton"  (click) = "updateUser()" *ngIf="perfilApi.getUserProfile()">Modificar</button>
-      <button class="boton"  (click) = "deleteUser()" *ngIf="perfilApi.getUserProfile()">Eliminar</button>
-      <input routerLink="/areaPersonal" class="boton"  type="submit" value="Atrás">
-    </div>
-
-      <input routerLink="/areaPersonal" class="boton__b"  type="submit" value="Atrás">
-
+      <div class="buttons d-flex justify-content-left">
+        <input class="boton"  type="submit" *ngIf="!perfilApi.getUserProfile()" value="Enviar">
+        <input routerLink="/areaPersonal" class="boton"  type="submit" value="Atrás">
+      </div>
     </form>
   </div>
   <div>
