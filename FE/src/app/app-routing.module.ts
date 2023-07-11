@@ -11,6 +11,7 @@ import { SubidaProyectosComponent } from './pages/area-personal/subida-proyectos
 import { FichaDeProyectoComponent } from './pages/listado-proyectos/ficha-de-proyecto/ficha-de-proyecto.component';
 import { ListadoUsuariosComponent } from './pages/listado-usuarios/listado-usuarios.component';
 import { DetalleUsuarioComponent } from './pages/listado-usuarios/detalle-usuario/detalle-usuario.component';
+import { MensajesComponent } from './pages/mensajes/mensajes.component';
 
 
 const routes: Routes = [
@@ -26,7 +27,8 @@ const routes: Routes = [
   
   {path: "projects/:id", component:FichaDeProyectoComponent},
   {path: "listadoUsuarios", component:ListadoUsuariosComponent},
-  {path: "detalle-usuario", component:DetalleUsuarioComponent}
+  {path: "detalle-usuario", component:DetalleUsuarioComponent},
+  {path: "mensajes", component:MensajesComponent}
 
 ];
 
