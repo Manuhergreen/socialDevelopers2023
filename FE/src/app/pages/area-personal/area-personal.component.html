@@ -24,7 +24,7 @@
                     <p>Entra aqui para subir tu proyecto y asi compartirlo con toda la comunidad de Desarrolladores</p>
                 </div>
                 <div class="button-area">
-                    <button class="btn btn-warning" routerLink="/subidaProyectos" >Subir proyecto</button>
+                    <button class="btn btn-warning" *ngIf="this.perfilApi.getUserProfile();"routerLink="/subidaProyectos" >Subir proyecto</button>
                 </div>
             </div>
         </div>
