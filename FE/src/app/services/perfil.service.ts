@@ -38,8 +38,8 @@ export class PerfilService {
   }
 
   deletePerfil (id:string) {
-    console.log(`${this.db_urlPerfil}/delete/${id}`)
-    return this.http.delete(`${this.db_urlPerfil}/delete/${id}`)
+    console.log(`${this.db_urlPerfil}/${id}`)
+    return this.http.delete(`${this.db_urlPerfil}/${id}`)
   }
 
   updatePerfil(id:string, user:userProfileI){
