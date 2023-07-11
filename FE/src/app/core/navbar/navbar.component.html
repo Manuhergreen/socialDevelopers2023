@@ -24,7 +24,7 @@
             </ul>
               <ul class="navbar-nav d-flex justify-content-end align-items-center">
               <li class="nav-item">
-                <a class="nav-link" routerLink="/areaPersonal">Area Personal</a>
+                <a class="nav-link" *ngIf="authApi.getToken()" routerLink="/areaPersonal">Area Personal</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" *ngIf="!authApi.getToken()" routerLink="/register">Regístrate</a>
