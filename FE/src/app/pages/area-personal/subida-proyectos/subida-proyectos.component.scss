@@ -34,10 +34,11 @@
   .boton{
     text-align:center;
     text-decoration: none;
-    font-family: 'Helvetica Neue', Helvetica, sans-serif;
-    display:inline-block;
+    display: flex;
+    flex-direction: wrap;
+    justify-content: center;
     background-color: yellow;
-    padding: 10px 50px;
+    padding: 10px;
     white-space: nowrap;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -48,7 +49,12 @@
     -moz-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
-    width: 150px;
+    width: 100px;
+  }
+
+  .boton__b{
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .boton:hover{
