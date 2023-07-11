@@ -22,6 +22,10 @@ export class ProjectService {
     return this.http.get(`${this.db_urlProject}/project/${id}`)
   }
 
+  getProjectByUser(id:string) {
+    return this.http.get(`${this.db_urlProject}/user/${id}`)
+  }
+
   addProject(project:projectsI){
     //  console.log(user);
      return this.http.post(`${this.db_urlProject}`, project )
