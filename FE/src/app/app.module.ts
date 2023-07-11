@@ -23,6 +23,8 @@ import { FichaDeProyectoComponent } from './pages/listado-proyectos/ficha-de-pro
 import { ListadoUsuariosComponent } from './pages/listado-usuarios/listado-usuarios.component';
 
 import { DetalleUsuarioComponent } from './pages/listado-usuarios/detalle-usuario/detalle-usuario.component';
+import { MensajesComponent } from './pages/mensajes/mensajes.component';
+import { RespuestasComponent } from './pages/mensajes/respuestas/respuestas.component';
 
 
 
@@ -44,6 +46,8 @@ import { DetalleUsuarioComponent } from './pages/listado-usuarios/detalle-usuari
     ListadoUsuariosComponent,
     FichaDeProyectoComponent,
     DetalleUsuarioComponent,
+    MensajesComponent,
+    RespuestasComponent,
    
     
   ],

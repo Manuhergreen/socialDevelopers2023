@@ -4,7 +4,7 @@
     </div>
     <div class="content-area"> 
         <div class="profile-area" *ngIf="this.perfilApi.getUserProfile()" >
-            <img [src]="{{this.UserDetail.imagen}}" alt="Avatar" >
+            <img [src]="this.UserDetail.imagen" alt="Avatar" >
             <h1>{{this.UserDetail.name}} {{this.UserDetail.lastname}}</h1>
             <p>{{this.UserDetail.description}}</p>
         </div>
