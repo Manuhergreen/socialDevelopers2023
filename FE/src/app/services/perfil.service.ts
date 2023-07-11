@@ -28,18 +28,25 @@ export class PerfilService {
   getUserProfNews() {
     return this.http.get(`${this.db_urlPerfil}/novedad`)
   }
+
+  //id segun la entidad de login
   getUserProfileById(id:string) {
     return this.http.get(`${this.db_urlPerfil}/perfil/${id}`)
   }
 
+  //id segun la entidad de usuarios
+  getUserProfileById2(id:string) {
+    return this.http.get(`${this.db_urlPerfil}/perfil2/${id}`)
+  }
+  
   newPerfil(user:userProfileI){
     //  console.log(user);
      return this.http.post(`${this.db_urlPerfil}`, user )
   }
 
   deletePerfil (id:string) {
-    console.log(`${this.db_urlPerfil}/delete/${id}`)
-    return this.http.delete(`${this.db_urlPerfil}/delete/${id}`)
+    console.log(`${this.db_urlPerfil}/${id}`)
+    return this.http.delete(`${this.db_urlPerfil}/${id}`)
   }
 
   updatePerfil(id:string, user:userProfileI){
