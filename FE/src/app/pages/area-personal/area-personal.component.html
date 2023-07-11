@@ -3,8 +3,8 @@
         <h1>Bienvenido a tu area personal</h1>
     </div>
     <div class="content-area"> 
-        <div class="profile-area">
-            <img src="../../../assets/hombre.png" alt="Avatar" >
+        <div class="profile-area" *ngIf="this.perfilApi.getUserProfile()" >
+            <img [src]="{{this.UserDetail.imagen}}" alt="Avatar" >
             <h1>{{this.UserDetail.name}} {{this.UserDetail.lastname}}</h1>
             <p>{{this.UserDetail.description}}</p>
         </div>
@@ -24,7 +24,7 @@
                     <p>Entra aqui para subir tu proyecto y asi compartirlo con toda la comunidad de Desarrolladores</p>
                 </div>
                 <div class="button-area">
-                    <button class="btn btn-warning" *ngIf="this.perfilApi.getUserProfile();"routerLink="/subidaProyectos" >Subir proyecto</button>
+                    <button class="btn btn-warning" *ngIf="this.perfilApi.getUserProfile()" routerLink="/subidaProyectos" >Subir proyecto</button>
                 </div>
             </div>
         </div>
