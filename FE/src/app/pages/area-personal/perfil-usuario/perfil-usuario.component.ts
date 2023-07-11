@@ -105,16 +105,17 @@ export class PerfilUsuarioComponent implements OnInit {
     console.log('actualizo:', this.idF)
     let user: userProfileI = {...this.perfilForm.value, idUser:this.idUserF};
 
-    this.perfilApi.updatePerfil(this.idF, user);
-    this.router.navigate(['/areaPersonal']);
+    this.perfilApi.updatePerfil(this.idF, user).subscribe((data) => {
+      this.router.navigate(['/']);
+    })
   }
 
   deleteUser(){
     console.log('borro:', this.idF)
     
-    this.perfilApi.deletePerfil(this.idF);
-
-    localStorage.removeItem('userProfile');
-    this.router.navigate(['/areaPersonal']);
+    this.perfilApi.deletePerfil(this.idF).subscribe((data) => {
+      localStorage.removeItem('userProfile');
+      this.router.navigate(['/']);
+    })
   }
 }
