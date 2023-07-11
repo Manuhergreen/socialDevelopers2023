@@ -32,9 +32,10 @@ export class AreaPersonalComponent implements OnInit {
 
          // busco los projectos del usuario logado.
          this.projectApi.getProjectByUser(this.UserDetail._id!).subscribe((data:any) => {
-            console.log(data);
+            // console.log(data);
             if (data.length > 0)
              {
+               this.projectList = [...data];
              }  
          })
        }  
