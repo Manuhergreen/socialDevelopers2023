@@ -39,9 +39,9 @@ export class PerfilService {
     return this.http.get(`${this.db_urlPerfil}/perfil2/${id}`)
   }
   
-  newPerfil(user:userProfileI){
+  newPerfil(form:FormData){
     //  console.log(user);
-     return this.http.post(`${this.db_urlPerfil}`, user )
+     return this.http.post(`${this.db_urlPerfil}`, form )
   }
 
   deletePerfil (id:string) {

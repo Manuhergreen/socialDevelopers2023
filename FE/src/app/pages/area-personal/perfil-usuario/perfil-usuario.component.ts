@@ -1,3 +1,4 @@
+import { image } from './../../../../../../../../Angular/Teoria/Jose/1.components/src/app/interfaces/media';
 import { ServicesService } from 'src/app/services/services.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -27,8 +28,11 @@ export class PerfilUsuarioComponent implements OnInit {
   enlaceGitF: string = "";
   enlaceLinkedinF: string= "";
   idUserF: string = "";
-  imagenF:string = "";
+  imagenF: string = "";
   descriptionF: string = "";
+
+  uploadFile!:File;
+  fileName:string = "";
 
   constructor( private form: FormBuilder, public perfilApi: PerfilService, private authApi: ServicesService,private router:Router){}
 
@@ -75,8 +79,14 @@ export class PerfilUsuarioComponent implements OnInit {
     // me suscribo a cambios en el formulario
     this.perfilForm.valueChanges.subscribe((data) => {
       this.newPerfil = data;
-})
+    })
 
+  }
+
+  onFileSelected(event:any) {
+
+    this.uploadFile = event.target.files[0];
+    this.fileName = this.uploadFile.name;
   }
 
   onSubmit()
@@ -87,9 +97,20 @@ export class PerfilUsuarioComponent implements OnInit {
     // console.log(this.perfilForm.valid);
     if (this.perfilForm.valid){
       // console.log('envio datos');
-      let user: userProfileI = {...this.perfilForm.value, idUser:this.idUserF};
+      // let user: userProfileI = {...this.perfilForm.value, idUser:this.idUserF};
       
-      this.perfilApi.newPerfil(user).subscribe(
+      const formData = new FormData();
+
+      formData.append('idUser', this.idUserF);
+      formData.append('name', this.nameF);
+      formData.append('lastname', this.lastnameF);
+      formData.append("imagen", this.uploadFile, this.fileName);
+      formData.append('email', this.emailF);
+      formData.append('description', this.descriptionF);
+      formData.append('enlaceGit', this.enlaceGitF);
+      formData.append('enlaceLinkedin', this.enlaceLinkedinF);
+
+      this.perfilApi.newPerfil(formData).subscribe(
         (data:any) => {
           // console.log(data)
           this.router.navigate(['/areaPersonal']);

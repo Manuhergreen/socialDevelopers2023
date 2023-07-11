@@ -26,20 +26,15 @@ export class ProjectService {
     return this.http.get(`${this.db_urlProject}/user/${id}`)
   }
 
-  addProject(project:projectsI){
-    //  console.log(user);
-     return this.http.post(`${this.db_urlProject}`, project )
+  addProject(form:FormData){
+     return this.http.post(`${this.db_urlProject}`, form )
   }
 
   deleteProject (id:string) {
-    console.log(`${this.db_urlProject}/${id}`)
     return this.http.delete(`${this.db_urlProject}/${id}`)
   }
 
   updateProject(id:string, project:projectsI){
-     console.log(project);
-     console.log(`${this.db_urlProject}/${id}`);
      return this.http.put(`${this.db_urlProject}/${id}`, project)
   }
-
 }

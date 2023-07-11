@@ -35,6 +35,9 @@ export class SubidaProyectosComponent implements OnInit {
 
   userData!: userI;
   idProfileF: string = "";
+  
+  uploadFile!:File;
+  fileName:string = "";
 
   constructor( private form: FormBuilder, public projectApi: ProjectService, private perfilApi: PerfilService,private router:Router){}
 
@@ -66,6 +69,12 @@ export class SubidaProyectosComponent implements OnInit {
     } )  
   }
 
+  onFileSelected(event:any) {
+
+    this.uploadFile = event.target.files[0];
+    this.fileName = this.uploadFile.name;
+  }
+
   onSubmitProject(){
     // console.log(this.perfilForm.value);
     this.submitted=true;
@@ -73,9 +82,27 @@ export class SubidaProyectosComponent implements OnInit {
     // console.log(this.perfilForm.valid);
     if (this.projectForm.valid){
       // console.log('envio datos');
-      let project: projectsI = {...this.projectForm.value, idUser:this.idProfileF};
-      
-      this.projectApi.addProject(project).subscribe(
+      // let project: projectsI = {...this.projectForm.value, idUser:this.idProfileF};
+      const formData = new FormData();
+
+      formData.append('idUser', this.idProfileF);
+      formData.append('name', this.nameP);
+      formData.append("imagen", this.uploadFile, this.fileName);
+      formData.append('html', this.htmlP);
+      formData.append('css', this.cssP);
+      formData.append('react', this.reactP);
+      formData.append('angular', this.angularP);
+      formData.append('php', this.phpP);
+      formData.append('jscript', this.jscriptP);
+      formData.append('python', this.pythonP);
+      formData.append('java', this.javaP);
+      formData.append('otros', this.otrosP);
+      formData.append('otherText', this.otherTextP);
+      formData.append('description', this.descriptionP);
+      formData.append('enlaceGit', this.enlaceGitP);
+      formData.append('enlaceProyecto', this.enlaceProyectoP);      
+
+      this.projectApi.addProject(formData).subscribe(
         (data:any) => {
           // console.log(data)
           this.router.navigate(['/areaPersonal']);

@@ -9,7 +9,7 @@
       </div>
       <div class="form-group col-md-12 mb-2">
         <label for="imagen" class="form-label"><h5>Agrega una foto del proyecto</h5></label>
-        <input class="form-control" type="file" formControlName="imagen" [(ngModel)]="imagenP" multiple>
+        <input class="form-control" type="file" formControlName="imagen" [(ngModel)]="imagenP" (change)="onFileSelected($event)">
       </div>
       <div class="checkbox">
         <div class="form-check form-check-inline">
@@ -67,12 +67,15 @@
       </div>
       <div class="buttons d-flex justify-content-center">
         <button type="submit" class="boton">Enviar</button>
-        <input class="boton"  type="submit" value="Modificar">
-        <input class="boton"  type="submit" value="Eliminar"> 
         <button routerLink="/areaPersonal" type="submit" class="boton">Atrás</button>
       </div>
     </form>
+  </div>  
+  <div>
+    <input class="boton"  type="submit" value="Modificar">
+     <input class="boton"  type="submit" value="Eliminar"> 
   </div>
+
   <div>
    <!-- Previsualizacion de los datos     -->
         <!-- <p>Nombre del Proyecto: <span>{{nombre_proyecto.value}}</span></p> -->
