@@ -23,7 +23,8 @@ const routes: Routes = [
   {path: "login",component:LoginComponent },
   {path: "perfil", component: PerfilUsuarioComponent},
   {path: "subidaProyectos", component:SubidaProyectosComponent},
-  {path: "ficha", component:FichaDeProyectoComponent},
+  
+  {path: "projects/:id", component:FichaDeProyectoComponent},
   {path: "listadoUsuarios", component:ListadoUsuariosComponent},
   {path: "detalle-usuario", component:DetalleUsuarioComponent}
 
