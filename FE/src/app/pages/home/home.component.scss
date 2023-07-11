@@ -64,6 +64,9 @@ h1 {
 /*project section start*/
 
 
+
+
+
 .proyects-section{
   background-color: #212529;
 }
@@ -121,6 +124,8 @@ h1 {
 .cards-profile{
   margin: 50px;
   display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 
  
 }
