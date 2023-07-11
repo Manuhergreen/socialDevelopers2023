@@ -35,7 +35,7 @@
     text-align:center;
     text-decoration: none;
     display: flex;
-    flex-direction: wrap;
+    flex-wrap: wrap;
     justify-content: center;
     background-color: yellow;
     padding: 10px;
@@ -43,22 +43,25 @@
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    margin: 10px 5px;
+    margin: 15px 5px;
     -webkit-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
-    width: 100px;
+    width: 150px;
   }
 
   .boton__b{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    width: 150px;
   }
 
   .boton:hover{
     background-color: rgba(203, 221, 10, 0.883);
+    
   }
 
  

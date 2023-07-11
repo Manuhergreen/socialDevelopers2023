@@ -11,36 +11,24 @@
     background-color: black;
 }
 
+input, textarea{
+  border:2px solid yellow;
+  border-radius: 3%;
+  width: 300px;
+}
 
   .boton{
     text-align:center;
     text-decoration: none;
-    display:inline-block;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     background-color: yellow;
-    padding: 10px 50px;
-    white-space: nowrap;
+    padding: 10px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    margin: 10px 5px;
-    -webkit-transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-}
-
-.boton__b{
-    text-align:center;
-    text-decoration: none;
-    display:inline-block;
-    background-color:yellow;
-    padding: 10px 50px;
-    white-space: nowrap;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    margin: 10px 5px;
+    margin: 15px 5px;
     -webkit-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
@@ -49,9 +37,6 @@
     width: 150px;
 }
 
-.boton__b:hover{
-  background-color:rgba(203, 221, 10, 0.883);
-}
 
 .boton:hover{
   background-color:rgba(203, 221, 10, 0.883);
@@ -74,11 +59,7 @@
       padding: 0 10px;
     }
 
-    input, textarea{
-      border:2px solid yellow;
-      border-radius: 3%;
-     
-    }
+   
 
   
 
