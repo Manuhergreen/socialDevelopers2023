@@ -1,28 +1,35 @@
-*{
+* {
     background-color: black;
-}
-
-.nav-link{
-    color:white;
-}
-.logo{
+  }
+  
+  .nav-link {
+    color: white;
+  }
+  
+  .logo {
     cursor: pointer;
-}
-.navbar-toggler{
+  }
+  
+  .navbar-toggler {
     background-color: white;
-}
-.navbar-toggler-icon{
+  }
+  
+  .navbar-toggler-icon {
     background-color: white;
-}
-
-
-
-.nav-item:hover{
+  }
+  
+  .nav-item:hover {
     transform: scale(1.00);
     overflow: hidden;
     border: 1.2px solid yellow;
-}
-
+  }
+  
+  .welcome-text {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto;
+  }
 
 
 
