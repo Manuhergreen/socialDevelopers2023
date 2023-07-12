@@ -124,10 +124,11 @@ img{
 /*listado proyectos*/
 
 .list-section{
-    display: flex;
-    justify-content: space-around;
+    display: inline-block;
+    
     flex-wrap: wrap;
     background-color: #212529 ;
+    
   }
   
   .padre{  
@@ -189,6 +190,7 @@ img{
   
   .box-button{
     padding-top: 1.1rem;
+    
   }
   
    button{
@@ -209,9 +211,16 @@ img{
 
 .list-section .title-projects h1{
   color: white;
+  margin-left: 15px;
   
  } 
-
+.edite-button{
+  margin-bottom: 15px;
+  
+}
+.button-edit{
+  font-size: 14px;
+}
   
   
   

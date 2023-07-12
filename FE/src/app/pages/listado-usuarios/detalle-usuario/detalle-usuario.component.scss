@@ -12,7 +12,8 @@
    border-radius: 1rem;
     background-color:#6C757D;
     width: 28.2rem;
-    height: 47rem;
+   height: fit-content;
+   padding-bottom: 10px;
 }
 
 .foto{
@@ -43,6 +44,7 @@ justify-content: center;
     font-size: small;
     display: flex;
     justify-content: center; 
+    color: #FFC107;
 }
 .box-description{
    
