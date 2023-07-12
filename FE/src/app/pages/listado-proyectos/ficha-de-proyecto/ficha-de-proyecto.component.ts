@@ -10,7 +10,7 @@ import { ProjectService } from 'src/app/services/project.service';
 })
 export class FichaDeProyectoComponent {
   id!: any;
-  projectData!: projectsI;
+  projectData!: any;
 
   constructor (private projectApi:ProjectService, private activatedRoute:ActivatedRoute, private router:Router){}
 
