@@ -29,13 +29,14 @@
 
       <div class="buttons d-flex justify-content-left">
         <input class="boton"  type="submit" *ngIf="!perfilApi.getUserProfile()" value="Enviar">
+        <button class="boton"  (click) = "updateUser()" *ngIf="perfilApi.getUserProfile()">Modificar</button>
+        <button class="boton"  (click) = "deleteUser()" *ngIf="perfilApi.getUserProfile()">Eliminar</button>
         <input routerLink="/areaPersonal" class="boton"  type="submit" value="Atrás">
       </div>
     </form>
   </div>
   <div>
-    <button class="boton"  (click) = "updateUser()" *ngIf="perfilApi.getUserProfile()">Modificar</button>
-    <button class="boton"  (click) = "deleteUser()" *ngIf="perfilApi.getUserProfile()">Eliminar</button>
+    
   </div>
   <div>
     <!-- Previsualizacion de los datos     -->
