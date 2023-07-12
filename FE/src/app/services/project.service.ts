@@ -35,8 +35,8 @@ export class ProjectService {
     return this.http.delete(`${this.db_urlProject}/${id}`)
   }
 
-  updateProject(id:string, project:projectsI){
-     return this.http.put(`${this.db_urlProject}/${id}`, project)
+  updateProject(id:string, form:FormData){
+     return this.http.put(`${this.db_urlProject}/${id}`, form)
   }
 
   setUpdateProject(id:any){

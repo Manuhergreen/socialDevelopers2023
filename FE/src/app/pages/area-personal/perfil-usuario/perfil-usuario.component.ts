@@ -70,16 +70,12 @@ export class PerfilUsuarioComponent implements OnInit {
          this.descriptionF = this.UserDetail.description;
          localStorage.setItem('userProfile',JSON.stringify(this.UserDetail))
        }  
-      else {
-
-      } 
     })
 
     // me suscribo a cambios en el formulario
     this.perfilForm.valueChanges.subscribe((data) => {
       this.newPerfil = data;
     })
-
   }
 
   onFileSelected(event:any) {

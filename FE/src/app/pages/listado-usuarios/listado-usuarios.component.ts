@@ -22,8 +22,7 @@ export class ListadoUsuariosComponent implements OnInit{
     this.perfilApi.getUserList('Lista').subscribe((data:any) => {
       this.nextPage = data.info.nextPage;
       this.previousPage = data.info.previousPage;
-      console.log(data);
-      
+      // console.log(data);
 
       if (data.results)
        {

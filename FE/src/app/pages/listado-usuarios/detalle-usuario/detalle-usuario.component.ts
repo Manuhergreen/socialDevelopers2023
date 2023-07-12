@@ -20,7 +20,7 @@ export class DetalleUsuarioComponent implements OnInit {
     })
 
     this.perfilApi.getUserProfileById2(this.id).subscribe((data:any) => {
-      console.log(data);
+      // console.log(data);
       if (data)
        {
         this.userProfileData = {...data};

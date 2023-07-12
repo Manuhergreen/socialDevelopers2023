@@ -2,7 +2,7 @@
 
   <div class="projectDiv m-4 " >
   <!-- <form action="procesar_formulario.php" method="post" enctype="multipart/form-data"> -->
-    <form class="ms-4 mt-4 me-4 col-md-6" [formGroup]="projectForm" (ngSubmit)="onSubmitProject()" >
+    <form class="ms-4 mt-4 me-4 col-md-6" [formGroup]="projectForm" (ngSubmit)="addProject()" >
       <div class="form-group col-md-12 mb-2">
         <label for="name"><h5>Nombre del proyecto</h5></label>
         <input type="text" class="form-control" formControlName="name" [(ngModel)]="nameP" placeholder="nombre del proyecto" required>
@@ -72,7 +72,7 @@
     </form>
   </div>  
   <div *ngIf="this.projectId" class = "projectContainer botonFlex">
-    <input class="boton" value="Modificar">
+    <input class="boton" (click)="updateProject()" value="Modificar">
     <input class="boton" (click)="removeProject()" value="Eliminar"> 
     <button routerLink="/areaPersonal" class="boton">Atrás</button>
   </div>
