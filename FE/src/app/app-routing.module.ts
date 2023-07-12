@@ -27,7 +27,7 @@ const routes: Routes = [
   
   {path: "projects/:id", component:FichaDeProyectoComponent},
   {path: "listadoUsuarios", component:ListadoUsuariosComponent},
-  {path: "detalle-usuario", component:DetalleUsuarioComponent},
+  {path: "detalle-usuario/:id", component:DetalleUsuarioComponent},
   {path: "mensajes", component:MensajesComponent}
 
 ];
