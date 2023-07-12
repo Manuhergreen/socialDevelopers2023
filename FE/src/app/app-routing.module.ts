@@ -8,16 +8,27 @@ import { RegisterComponent } from './pages/registro/registro.component';
 import { LoginComponent } from './pages/login/login.component';
 import { PerfilUsuarioComponent } from './pages/area-personal/perfil-usuario/perfil-usuario.component';
 import { SubidaProyectosComponent } from './pages/area-personal/subida-proyectos/subida-proyectos.component';
+import { FichaDeProyectoComponent } from './pages/listado-proyectos/ficha-de-proyecto/ficha-de-proyecto.component';
+import { ListadoUsuariosComponent } from './pages/listado-usuarios/listado-usuarios.component';
+import { DetalleUsuarioComponent } from './pages/listado-usuarios/detalle-usuario/detalle-usuario.component';
+import { MensajesComponent } from './pages/mensajes/mensajes.component';
+
 
 const routes: Routes = [
   {path: "",component:HomeComponent },
   {path: "projects",component:ListadoProyectosComponent },
   {path: "news",component:NoticiasComponent },
+
   {path: "areaPersonal",component:AreaPersonalComponent },
   {path: "register",component:RegisterComponent },
   {path: "login",component:LoginComponent },
   {path: "perfil", component: PerfilUsuarioComponent},
-  {path: "subidaProyectos", component:SubidaProyectosComponent}
+  {path: "subidaProyectos", component:SubidaProyectosComponent},
+  
+  {path: "projects/:id", component:FichaDeProyectoComponent},
+  {path: "listadoUsuarios", component:ListadoUsuariosComponent},
+  {path: "detalle-usuario/:id", component:DetalleUsuarioComponent},
+  {path: "mensajes", component:MensajesComponent}
 
 ];
 

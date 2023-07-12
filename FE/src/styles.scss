@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
+
+@font-face {
+    font-family: "FiraCode.ttf";
+    src: url("../src/assets/FiraCode.ttf") format("woff");
+  }
+
+
+  * {
+    font-family: "FiraCode.ttf";
+    
+  }
+

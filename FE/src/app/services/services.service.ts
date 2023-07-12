@@ -7,20 +7,26 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ServicesService {
   db_url: string= "http://localhost:5200/user";
+  
 
   public userData: userI ={
-    id: '',
+    _id: '',
     name: '',
     lastname: '',
     email:'',
     password:'',
+    addnews:false,
     role:''
   }
   
   constructor(private http:HttpClient) {}
 
-  register(user:userI){
-    return this.http.post(`${this.db_url}/register`, user)
+   register(user:userI){
+    // console.log(user);
+    if (!user.addnews)
+      user.addnews = false;
+
+    return this.http.post(`${this.db_url}/register`, user )
   }
 
   login(user:userI){
@@ -30,6 +36,7 @@ export class ServicesService {
   logOut(){
     localStorage.removeItem('token');
     localStorage.removeItem('user');
+    localStorage.removeItem('userProfile');
   }
 
   getToken(){
@@ -41,4 +48,17 @@ export class ServicesService {
     // console.log('nombre:', user.name);
     return user?.name;
   }
+  getUser(){
+    let user = JSON.parse(String(localStorage.getItem('user')));
+    // console.log('nombre:', user.name);
+    return user;
+  }
+  
 }
+
+
+
+
+
+
+

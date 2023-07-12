@@ -1,34 +1,55 @@
 export interface userI{
-    id?: string;
+    _id: string;
     name: string;
     lastname: string;
     email:string;
     password:string;
-    role?: string;
+    addnews: boolean;
+    role: string;
 }
 
 export interface userProfileI{
-    id: string;
+    _id: string;
+    idUser: string;
     name: string;
     lastname: string;
-    image_profile: string;
+    imagen: string;
     email: string;
     description: string;
-    enlace_git: string;
-    enlace_linkedin: string;
-    
+    enlaceGit: string;
+    enlaceLinkedin: string;
 }
 
 export interface projectsI{
-    id:string,
-    id_user: string,
-    name_project: string;
-    imagen_project: string;
-    frameworks: string;
+    _id:string,
+    idUserProf: string,
+    name: string;
+    imagen: string;
+    html:string;
+    css:string;
+    react:string;
+    angular:string;
+    php:string;
+    jscript:string;
+    python:string;
+    java:string;
+    otros:string;
+    otherText:string;
     description: string;
-    enlace_git: string;
-    enlace_proyecto:string;
+    enlaceGit: string;
+    enlaceProyecto:string;
 }
 
+export interface mensajesI{
+    _id:string,
+    email:string,
+    title: string,
+    textomsj: string
+}
 
-
+export interface respuestasI{
+    _id:string,
+    idMsj:string,
+    title: string,
+    textomsj: string
+}

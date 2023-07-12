@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -16,6 +17,18 @@ import { NoticiasComponent } from './pages/noticias/noticias.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+import { FichaDeProyectoComponent } from './pages/listado-proyectos/ficha-de-proyecto/ficha-de-proyecto.component';
+import { ListadoUsuariosComponent } from './pages/listado-usuarios/listado-usuarios.component';
+
+import { DetalleUsuarioComponent } from './pages/listado-usuarios/detalle-usuario/detalle-usuario.component';
+import { MensajesComponent } from './pages/mensajes/mensajes.component';
+import { RespuestasComponent } from './pages/mensajes/respuestas/respuestas.component';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -30,6 +43,12 @@ import {HttpClientModule} from '@angular/common/http';
     SubidaProyectosComponent,
     ListadoProyectosComponent,
     NoticiasComponent,
+    ListadoUsuariosComponent,
+    FichaDeProyectoComponent,
+    DetalleUsuarioComponent,
+    MensajesComponent,
+    RespuestasComponent,
+   
     
   ],
   imports: [
@@ -37,7 +56,9 @@ import {HttpClientModule} from '@angular/common/http';
     AppRoutingModule, 
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
