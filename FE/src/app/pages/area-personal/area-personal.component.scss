@@ -1,4 +1,8 @@
-*{margin: 0;}
+
+.personal-area{
+  background-color: #212529;
+}
+
 .wellcome-banner{
     background-image: url('https://media.istockphoto.com/id/865457032/vector/abstract-futuristic-cyberspace-with-binary-code-matrix-background-with-digits-well-organized.jpg?s=612x612&w=0&k=20&c=IQcdedY8fn_DMq6nwc5MaHUBe0H0d5DPyibHR8J2usk=');
     height: 100px;
@@ -36,18 +40,25 @@ img{
 
 .content-area{
     
-    background-color: #212529;
+
+    // margin: 15px;
     padding: 15px;  
 }
 .profile-area{
-   background-color: rgb(241, 244, 233);
-   border-radius: 15px;
-    width: auto;
+  background-color: #6C757D;
+  border-radius: 15px;
+  width: auto;
+  display: flex;
+  margin-bottom: 15px;
+
   
     h1{
         font-size: 16px;
         font-weight: bold;
         padding: 5px;
+        color: white;
+        
+
     }
     p{
         font-size: 10px;
@@ -62,11 +73,27 @@ img{
         margin: 10px;
     }  
 }
+.profile-detail{
+  text-align: left;
+  align-items: center;
+  margin: 15px;
+  color: white;
+  
+}
+.pic{
+  width:100px;
+  
+  img{
+    width: 100px;
+    border-radius: 15px;
+  }
+}
+
 
 .edit-area{
-  margin-top: 15px;
-  color: aliceblue;
-    background-color:#6C757D;
+
+    background-color: #6C757D;;
+
     border-radius: 15px;
     width: 100%;
     height: auto;
@@ -75,9 +102,9 @@ img{
 }
 
 .edit-profile{
-    
-   
     width: auto;
+    color: white;
+    margin-bottom: 15px;
 }
 
 
@@ -87,7 +114,7 @@ img{
 
 
 .projects-area{
-    background-color: gainsboro;
+    background-color: #6C757D;
     border-radius: 15px;
     
     height: 400px;
@@ -122,7 +149,7 @@ img{
     color: aliceblue;
   }
   
-  
+ 
   }
   
   .box-texto{
@@ -176,6 +203,15 @@ img{
     background-color: #FFC107;
     color: black;
    }
+.padre .texto .box-texto{
+  margin-right: 3px;
+}
+
+.list-section .title-projects h1{
+  color: white;
+  
+ } 
+
   
   
   

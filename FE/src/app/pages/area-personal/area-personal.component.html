@@ -3,14 +3,16 @@
         <h1>Bienvenido a tu area personal</h1>
     </div>
     <p></p>
-    <div class="content-area">
 
-        <div class="profile-area" *ngIf="this.perfilApi.getUserProfile()">
-            <div class="caja-imagen">
-                <img [src]="this.UserDetail.imagen" alt="Avatar">
+    <div class="content-area"> 
+        <div class="profile-area" *ngIf="this.perfilApi.getUserProfile()" >
+            <div class="pic">
+                <img [src]="this.UserDetail.imagen" alt="Avatar" >
             </div>
-            <h1 class="h1-perfil">{{this.UserDetail.name}} {{this.UserDetail.lastname}}</h1>
-            <p class="p-perfil">{{this.UserDetail.description}}</p>
+            <div class="profile-detail">
+                <h1>{{this.UserDetail.name}} {{this.UserDetail.lastname}}</h1>
+                <p>{{this.UserDetail.description}}</p>
+            </div>
         </div>
         <div class="edit-area mb-4">
             <div class="edit-profile">
@@ -35,6 +37,10 @@
         </div>
     </div>
     <div class="list-section">
+        <div class="title-projects">
+            <h1>Proyectos subidos </h1>
+            
+        </div>
         <div *ngFor="let item of projectList" class="padre">
             <div class="foto">
                 <img class="fotoPerfil" [src]="item.imagen" alt={{item.name}}>
