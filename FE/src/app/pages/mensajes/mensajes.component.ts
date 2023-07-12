@@ -34,7 +34,8 @@ export class MensajesComponent implements OnInit {
 
     // recupero los datos del login
     this.userData = this.authApi.getUser();
-    this.emailM = this.userData.email;
+    if (this.userData)
+      this.emailM = this.userData.email;
 
     // me suscribo a cambios en el formulario
     this.mensajeForm.valueChanges.subscribe((data) => {
@@ -42,7 +43,7 @@ export class MensajesComponent implements OnInit {
     })
 
     this.mensajeApi.getMensajeList().subscribe((data:any) => {
-      console.log(data);
+      // console.log(data);
       if (data.length > 0)
        {
         this.mensajeList = [...data];

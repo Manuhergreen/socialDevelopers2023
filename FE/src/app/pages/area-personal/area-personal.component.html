@@ -31,7 +31,7 @@
                 </div>
                 <div class="button-area">
                     <button class="btn btn-warning" *ngIf="this.perfilApi.getUserProfile()"
-                        routerLink="/subidaProyectos">Subir proyecto</button>
+                        (click)="subirProject()">Subir proyecto</button>
                 </div>
             </div>
         </div>
