@@ -103,7 +103,10 @@ export class PerfilUsuarioComponent implements OnInit {
       formData.append('idUser', this.idUserF);
       formData.append('name', this.nameF);
       formData.append('lastname', this.lastnameF);
-      formData.append("imagen", this.uploadFile, this.fileName);
+
+      if (this.fileName)
+        formData.append("imagen", this.uploadFile, this.fileName);
+
       formData.append('email', this.emailF);
       formData.append('description', this.descriptionF);
       formData.append('enlaceGit', this.enlaceGitF);
@@ -129,7 +132,10 @@ export class PerfilUsuarioComponent implements OnInit {
     formData.append('idUser', this.idUserF);
     formData.append('name', this.nameF);
     formData.append('lastname', this.lastnameF);
-    formData.append("imagen", this.uploadFile, this.fileName);
+
+    if (this.fileName)
+       formData.append("imagen", this.uploadFile, this.fileName);
+
     formData.append('email', this.emailF);
     formData.append('description', this.descriptionF);
     formData.append('enlaceGit', this.enlaceGitF);

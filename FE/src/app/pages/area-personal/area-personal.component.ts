@@ -40,9 +40,10 @@ export class AreaPersonalComponent implements OnInit {
          })
        }  
     })
+  }
 
-
-    
-
+  editarProject(id:any){
+    this.projectApi.setUpdateProject (id);
+    this.router.navigate(['/subidaProyectos']);
   }
 }

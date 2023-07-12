@@ -1,7 +1,7 @@
 .profileContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    // display: flex;
+    // flex-direction: row;
+    justify-content: start;
     --opacidad-negro: 0.5;
     background-image: linear-gradient(rgba(0, 0, 1, var(--opacidad-negro)), rgba(0, 0, 0, var(--opacidad-negro))),url("../../../../assets/perfil.jpg");
     background-size: cover;
@@ -58,7 +58,10 @@ input, textarea{
     label{
       padding: 0 10px;
     }
-
+    .botonFlex{
+      display: flex;
+      flex-wrap: wrap;
+   }
    
 
   

@@ -7,6 +7,7 @@ import { projectsI } from '../model/social.models';
 })
 export class ProjectService {
   db_urlProject: string = "http://localhost:5200/project";
+  updateProjectId:string = "";
 
   constructor(private http:HttpClient) { }
 
@@ -36,5 +37,13 @@ export class ProjectService {
 
   updateProject(id:string, project:projectsI){
      return this.http.put(`${this.db_urlProject}/${id}`, project)
+  }
+
+  setUpdateProject(id:any){
+    this.updateProjectId = id;
+  }
+
+  getProjectId(){
+    return this.updateProjectId;
   }
 }

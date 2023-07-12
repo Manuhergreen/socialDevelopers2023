@@ -51,7 +51,7 @@
                 </div>
                 <div class="box-button">
                     <button routerLink="/projects/{{item._id}}">Ver proyecto</button>
-                    <button routerLink="/projects/{{item._id}}">Editar proyecto</button>
+                    <button (click)="editarProject(item._id)">Editar proyecto</button>
                 </div>
             </div>
         </div>
