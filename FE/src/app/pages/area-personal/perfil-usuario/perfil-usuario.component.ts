@@ -123,16 +123,26 @@ export class PerfilUsuarioComponent implements OnInit {
   }
 
   updateUser(){
-    console.log('actualizo:', this.idF)
-    let user: userProfileI = {...this.perfilForm.value, idUser:this.idUserF};
+    // console.log('actualizo:', this.idF)
+    // let user: userProfileI = {...this.perfilForm.value, idUser:this.idUserF};
+    const formData = new FormData();
 
-    this.perfilApi.updatePerfil(this.idF, user).subscribe((data) => {
+    formData.append('idUser', this.idUserF);
+    formData.append('name', this.nameF);
+    formData.append('lastname', this.lastnameF);
+    formData.append("imagen", this.uploadFile, this.fileName);
+    formData.append('email', this.emailF);
+    formData.append('description', this.descriptionF);
+    formData.append('enlaceGit', this.enlaceGitF);
+    formData.append('enlaceLinkedin', this.enlaceLinkedinF);
+
+    this.perfilApi.updatePerfil(this.idF, formData).subscribe((data) => {
       this.router.navigate(['/']);
     })
   }
 
   deleteUser(){
-    console.log('borro:', this.idF)
+    // console.log('borro:', this.idF)
     
     this.perfilApi.deletePerfil(this.idF).subscribe((data) => {
       localStorage.removeItem('userProfile');
