@@ -67,7 +67,7 @@
     <div *ngFor="let profile of userProfileList" class="flip-card  mb-4">
       <div class="flip-card-inner">
         <div class="flip-card-front">
-          <img src="../../../assets/hombre.png" alt="Avatar" style="width:300px;height:300px;">
+          <img [src]="profile.imagen" alt="Avatar" style="width:300px;height:300px;">
           <h1>{{profile.name}} {{profile.lastname}}</h1>
           <p>Full Stack Developer Junior</p>
         </div>
