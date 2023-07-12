@@ -43,7 +43,7 @@
           <h1><strong>Noticias</strong></h1>
       </div>
       <div class="row row-cols-1 row-cols-md-4 g-4 ms-2 me-2 ">
-        <div *ngFor="let news of listNoticias; let i=index " class="col mb-4">
+        <div *ngFor="let news of listNoticias; let i=index " >
           <div  *ngIf="i< 5" class="card">
             <a [href]="news.url" target="_blank" class="
               card">
