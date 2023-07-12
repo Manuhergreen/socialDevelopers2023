@@ -1,4 +1,3 @@
-import { image } from './../../../../../../../../Angular/Teoria/Jose/1.components/src/app/interfaces/media';
 import { ServicesService } from 'src/app/services/services.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
