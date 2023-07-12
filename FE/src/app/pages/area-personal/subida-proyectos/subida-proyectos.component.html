@@ -65,16 +65,16 @@
           <input type="text" class="form-control" formControlName="enlaceProyecto" [(ngModel)]="enlaceProyectoP" placeholder="enlace a proyecto">
         </div>
       </div>
-      <div class="buttons d-flex justify-content-center">
-        <input class="boton"  type="submit" value="Modificar">
-        <input class="boton"  type="submit" value="Eliminar"> 
+      <div class="buttons d-flex justify-content-center" *ngIf="!this.projectId">
         <button type="submit" class="boton">Enviar</button>
         <button routerLink="/areaPersonal" type="submit" class="boton">Atrás</button>
       </div>
     </form>
   </div>  
-  <div>
-    
+  <div *ngIf="this.projectId" class = "projectContainer botonFlex">
+    <input class="boton" value="Modificar">
+    <input class="boton" (click)="removeProject()" value="Eliminar"> 
+    <button routerLink="/areaPersonal" class="boton">Atrás</button>
   </div>
 
   <div>

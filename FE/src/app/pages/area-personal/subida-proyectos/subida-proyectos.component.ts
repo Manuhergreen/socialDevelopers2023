@@ -39,6 +39,8 @@ export class SubidaProyectosComponent implements OnInit {
   uploadFile!:File;
   fileName:string = "";
 
+  projectId!:string;
+
   constructor( private form: FormBuilder, public projectApi: ProjectService, private perfilApi: PerfilService,private router:Router){}
 
   ngOnInit(){
@@ -62,6 +64,9 @@ export class SubidaProyectosComponent implements OnInit {
     // recupero los datos del login
     this.userData = this.perfilApi.getUserProfile();
     this.idProfileF = this.userData._id;
+
+    // recupero los datos del login
+    this.projectId = this.projectApi.getProjectId();
 
     // me suscribo a cambios en el formulario
     this.projectForm.valueChanges.subscribe((data) => {
@@ -87,7 +92,10 @@ export class SubidaProyectosComponent implements OnInit {
 
       formData.append('idUser', this.idProfileF);
       formData.append('name', this.nameP);
-      formData.append("imagen", this.uploadFile, this.fileName);
+
+      if (this.fileName)
+         formData.append("imagen", this.uploadFile, this.fileName);
+
       formData.append('html', this.htmlP);
       formData.append('css', this.cssP);
       formData.append('react', this.reactP);
@@ -112,5 +120,12 @@ export class SubidaProyectosComponent implements OnInit {
         }
       )
     }
+  }
+
+  removeProject(){
+    this.projectApi.deleteProject(this.projectId).subscribe((data) => {
+      this.router.navigate(['/areaPersonal']);
+
+    })
   }
 }
