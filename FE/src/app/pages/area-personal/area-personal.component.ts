@@ -42,6 +42,11 @@ export class AreaPersonalComponent implements OnInit {
     })
   }
 
+  subirProject()
+  {
+    this.projectApi.setUpdateProject ("");
+    this.router.navigate(['/subidaProyectos']);
+  }
   editarProject(id:any){
     this.projectApi.setUpdateProject (id);
     this.router.navigate(['/subidaProyectos']);
