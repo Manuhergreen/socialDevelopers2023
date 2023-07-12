@@ -39,3 +39,17 @@ export interface projectsI{
     enlaceGit: string;
     enlaceProyecto:string;
 }
+
+export interface mensajesI{
+    _id:string,
+    email:string,
+    title: string,
+    textomsj: string
+}
+
+export interface respuestasI{
+    _id:string,
+    idMsj:string,
+    title: string,
+    textomsj: string
+}
