@@ -49,10 +49,10 @@ export class PerfilService {
     return this.http.delete(`${this.db_urlPerfil}/${id}`)
   }
 
-  updatePerfil(id:string, user:userProfileI){
-     console.log(user);
-     console.log(`${this.db_urlPerfil}/${id}`);
-     return this.http.put(`${this.db_urlPerfil}/${id}`, user)
+  updatePerfil(id:string, form:FormData){
+    //  console.log(form);
+    //  console.log(`${this.db_urlPerfil}/${id}`);
+     return this.http.put(`${this.db_urlPerfil}/${id}`, form)
   }
 
  getUserProfile(){
