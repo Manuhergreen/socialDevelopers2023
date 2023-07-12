@@ -3,6 +3,7 @@
         <h1>Bienvenido a tu area personal</h1>
     </div>
     <p></p>
+
     <div class="content-area"> 
         <div class="profile-area" *ngIf="this.perfilApi.getUserProfile()" >
             <div class="pic">
@@ -12,17 +13,16 @@
                 <h1>{{this.UserDetail.name}} {{this.UserDetail.lastname}}</h1>
                 <p>{{this.UserDetail.description}}</p>
             </div>
-
         </div>
-        <div   class="edit-area mb-4">
+        <div class="edit-area mb-4">
             <div class="edit-profile">
                 <div class="text-profile">
                     <h3>Edita tu perfil</h3>
                     <p>Puedes editar tu perfil para mantener tu informacion actualizada</p>
                 </div>
                 <div class="button-area">
-                    <button class="btn btn-warning" routerLink="/perfil" >Editar perfil</button>
-                </div>                  
+                    <button class="btn btn-warning" routerLink="/perfil">Editar perfil</button>
+                </div>
             </div>
             <div class="edit-profile">
                 <div class="text-profile">
@@ -30,7 +30,8 @@
                     <p>Entra aqui para subir tu proyecto y asi compartirlo con toda la comunidad de Desarrolladores</p>
                 </div>
                 <div class="button-area">
-                    <button class="btn btn-warning" *ngIf="this.perfilApi.getUserProfile()" routerLink="/subidaProyectos" >Subir proyecto</button>
+                    <button class="btn btn-warning" *ngIf="this.perfilApi.getUserProfile()"
+                        routerLink="/subidaProyectos">Subir proyecto</button>
                 </div>
             </div>
         </div>
@@ -41,27 +42,17 @@
             
         </div>
         <div *ngFor="let item of projectList" class="padre">
-          <div class="foto">
-            <img class="fotoPerfil"
-              [src]="item.imagen"
-              alt={{item.name}}>
-          </div>
-          <div class="texto">
-            <div class="box-texto">
-              <h5>{{item.name}}</h5>
+            <div class="foto">
+                <img class="fotoPerfil" [src]="item.imagen" alt={{item.name}}>
             </div>
-            <div class="box-button">
-              <button routerLink="/projects/{{item._id}}">Ver proyecto</button>
+            <div class="texto">
+                <div class="box-texto">
+                    <h5>{{item.name}}</h5>
+                </div>
+                <div class="box-button">
+                    <button routerLink="/projects/{{item._id}}">Ver proyecto</button>
+                </div>
             </div>
-          </div>
         </div>
-      </div> 
+    </div>
 </div>
-
-
-
-
- 
-
-    
-
