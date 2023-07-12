@@ -20,7 +20,7 @@ export class FichaDeProyectoComponent {
     })
 
     this.projectApi.getProjectById(this.id).subscribe((data:any) => {
-      console.log(data);
+      // console.log(data);
       if (data)
        {
         this.projectData = {...data};
