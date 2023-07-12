@@ -26,7 +26,7 @@ export class HomeComponent  implements OnInit{
     })
 
     this.projectApi.getProjectNews().subscribe((data:any) => {
-      console.log(data);
+      // console.log(data);
 
       if (data)
        {
@@ -35,7 +35,7 @@ export class HomeComponent  implements OnInit{
     })
 
     this.perfilApi.getUserProfNews().subscribe((data:any) => {
-      console.log('perfiles', data)
+      // console.log('perfiles', data)
       if (data)
        {
         this.userProfileList = [...data];

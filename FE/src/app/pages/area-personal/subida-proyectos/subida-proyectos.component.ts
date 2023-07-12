@@ -68,6 +68,30 @@ export class SubidaProyectosComponent implements OnInit {
     // recupero los datos del login
     this.projectId = this.projectApi.getProjectId();
 
+    this.projectApi.getProjectById(this.projectId).subscribe(
+      (data:any) => {
+        // console.log(data);
+        if (data)
+        {
+          this.nameP = data.name;
+          this.imagenP = data.imagen;
+          this.htmlP = data.html;
+          this.cssP = data.css;
+          this.reactP = data.react;
+          this.angularP = data.angular;
+          this.phpP = data.php;
+          this.jscriptP = data.jscript;
+          this.pythonP = data.python;
+          this.javaP = data.java;
+          this.otrosP = data.otros;
+          this.otherTextP = data.otherText;
+          this.descriptionP = data.description;
+          this.enlaceGitP = data.enlaceGit;
+          this.enlaceProyectoP = data.enlaceProyecto;
+        }          
+      }
+    ) 
+
     // me suscribo a cambios en el formulario
     this.projectForm.valueChanges.subscribe((data) => {
        this.projectData = data;
@@ -75,12 +99,11 @@ export class SubidaProyectosComponent implements OnInit {
   }
 
   onFileSelected(event:any) {
-
     this.uploadFile = event.target.files[0];
     this.fileName = this.uploadFile.name;
   }
 
-  onSubmitProject(){
+  addProject(){
     // console.log(this.perfilForm.value);
     this.submitted=true;
 
@@ -120,6 +143,34 @@ export class SubidaProyectosComponent implements OnInit {
         }
       )
     }
+  }
+
+  updateProject(){
+    const formData = new FormData();
+
+    formData.append('idUser', this.idProfileF);
+    formData.append('name', this.nameP);
+
+    if (this.fileName)
+       formData.append("imagen", this.uploadFile, this.fileName);
+
+    formData.append('html', this.htmlP);
+    formData.append('css', this.cssP);
+    formData.append('react', this.reactP);
+    formData.append('angular', this.angularP);
+    formData.append('php', this.phpP);
+    formData.append('jscript', this.jscriptP);
+    formData.append('python', this.pythonP);
+    formData.append('java', this.javaP);
+    formData.append('otros', this.otrosP);
+    formData.append('otherText', this.otherTextP);
+    formData.append('description', this.descriptionP);
+    formData.append('enlaceGit', this.enlaceGitP);
+    formData.append('enlaceProyecto', this.enlaceProyectoP);      
+
+    this.projectApi.updateProject(this.projectId, formData).subscribe((data) => {
+      this.router.navigate(['/areaPersonal']);
+    })
   }
 
   removeProject(){

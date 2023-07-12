@@ -36,10 +36,9 @@
             </div>
         </div>
     </div>
-    <div class="list-section">
+    <div class="list-section" *ngIf="projectList">
         <div class="title-projects">
             <h1>Proyectos subidos </h1>
-            
         </div>
         <div *ngFor="let item of projectList" class="padre">
             <div class="foto">
@@ -50,10 +49,8 @@
                     <h5>{{item.name}}</h5>
                 </div>
                 <div class="box-button">
-
                     <button routerLink="/projects/{{item._id}}">Ver proyecto</button>
                     <button (click)="editarProject(item._id)">Editar proyecto</button>
-
                 </div>
             </div>
         </div>

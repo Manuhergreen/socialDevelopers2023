@@ -19,7 +19,7 @@ export class ListadoProyectosComponent {
 
   ngOnInit(){
     this.projectApi.getProjectList('lista').subscribe((data:any) => {
-      console.log(data);
+      // console.log(data);
       this.nextPage = data.info.nextPage;
       this.previousPage = data.info.previousPage;
 
